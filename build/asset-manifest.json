@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b66b5e00.css",
+    "main.js": "/static/js/main.1d5d2473.js",
+    "static/js/787.001ee0dc.chunk.js": "/static/js/787.001ee0dc.chunk.js",
+    "static/media/celeblife.png": "/static/media/celeblife.851135fa80bf7dc0e91f.png",
+    "static/media/glitterbg.jpg": "/static/media/glitterbg.f3365237b5585ea4480b.jpg",
+    "static/media/granjonRegular.svg": "/static/media/granjonRegular.9f6c9c12d6ae815ecb68.svg",
+    "static/media/logobig.png": "/static/media/logobig.bd043b569cdd39e6b057.png",
+    "static/media/granjonRegular.eot": "/static/media/granjonRegular.87908f812b39a7c1a8de.eot",
+    "static/media/map.webp": "/static/media/map.b444ef1f7105120b8607.webp",
+    "static/media/granjonRegular.woff": "/static/media/granjonRegular.03689570fe3895b2dd44.woff",
+    "static/media/granjonRegular.woff2": "/static/media/granjonRegular.5ac2919815f459849a0b.woff2",
+    "index.html": "/index.html",
+    "main.b66b5e00.css.map": "/static/css/main.b66b5e00.css.map",
+    "main.1d5d2473.js.map": "/static/js/main.1d5d2473.js.map",
+    "787.001ee0dc.chunk.js.map": "/static/js/787.001ee0dc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b66b5e00.css",
+    "static/js/main.1d5d2473.js"
+  ]
+}
