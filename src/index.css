@@ -18,6 +18,7 @@
   --secondaryColor: #8e988d;
   --white: #ffffff;
   --tertiaryColor: #e4e9e3;
+  --sparklesBg: rgba(255, 180, 0, .3)
 }
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
@@ -383,16 +384,54 @@ ul{
 p, h2{
   margin: 0;
 }
+/* Common Get in touch form styles */
+.form-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255,255,255,0.7);
+  z-index: 100;
+}
+.form-overlay.show{
+  display: block;
+}
+.form-overlay.hidden{
+  display: none;
+}
+.form-overlay .get-in-touch{
+  height: 70vh;
+  width: 520px;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--primaryBlack);
+  position: absolute;
+  top: calc(50% - 35vh);
+  left: calc(50% - 260px);
+}
+.close-button{
+  position: absolute;
+  background: none;
+  border: none;
+  top: 10px;
+  right: 5px;
+}
 /* Header styles */
 .header{
   position: fixed;
   z-index: 99;
   width: 100%;
   padding: 20px 0px;
+  background: rgba(0,0,0,0.6);
 }
 .header-wrapper{
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
 }
 .header-nav{
@@ -409,6 +448,10 @@ p, h2{
 }
 .nav-list li a{
   color: var(--white);
+  transition: all .3s ease;
+}
+.nav-list li a:hover, .nav-list li a.active{
+  color: var(--primaryYellow);
 }
 .download-brochure{
   width: calc(50% - 80px);
@@ -426,32 +469,77 @@ p, h2{
 .full-height{
   height: 100vh;
 }
+.get-in-touch-btn{
+  position: fixed;
+  width: 150px;
+  height: 50px;
+  text-align: center;
+  right: -55px;
+  top: 40%;
+  background: var(--primaryYellow);
+  color: var(--primaryBlack);
+  z-index: 99;
+  border-radius: 20px 20px 0px 0px;
+  transform: rotate(-90deg);
+  cursor: pointer;
+  border: none;
+}
 /* Masthead styles */
 .masthead{
   background: var(--primaryBlack);
   position: relative;
   width: 100%;
+  height: calc(max(100vw, 100vh))
+}
+.sparkles{
+  background: var(--sparklesBg);
+  border-radius: 50%;
+  position: absolute;
+  min-height: 40px;
+  min-width: 40px;
+}
+.left-top-sparkle{
+  top: 30%;
+  width: 70px;
+  height: 70px;
+  left: -50px;
+}
+.left-mid-sparkle{
+  top: 55%;
+  left: 15%;
+  width: 60px;
+  height: 60px;
+}
+.right-mid-sparkle{
+  top: 70%;
+  right: 5%;
+  width: 60px;
+  height: 60px;
+}
+.right-mid-sparkle-big{
+  top: 70%;
+  right: 2%;
+  width: 100px;
+  height: 100px;
 }
 .masthead-wrapper{
   position: relative;
-  height: 100%;
+  height: 100vh;
+  left: 0px;
+  right: 0px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 .elevation-wrapper{
-  background: var(--secondaryBlack);
-  width: 45%;
-  min-width: 500px;
-  min-height: 410px;
-  position: relative;
+  /* background: var(--secondaryBlack); */
+  bottom: -5px;
+  position: absolute;
 }
 .elevation-wrapper img{
-  position: absolute;
-  width: 90%;
-  left: 5%;
-  bottom: 0px;
+  width: auto;
+  height: 80vh;
 }
 .masthead-title{
   font-family: var(--mainFont);
@@ -468,9 +556,18 @@ p, h2{
 }
 .gold-logo{
   position: absolute;
-  left: 10%;
+  left: 15%;
   width: 403px;
   height: 407px;
+}
+.gold-logo .left-top-twinkle{
+  left: 35%;
+  width: 75px;
+}
+.gold-logo .left-bottom-twinkle{
+  left: 35%;
+  bottom: 20%;
+  width: 75px;
 }
 /* Live a celeb life styles */
 .celeb-life{
@@ -489,6 +586,16 @@ p, h2{
 }
 .right-celeb-life{
   padding:0px 0px 40px 60px;
+  position: relative;
+  width: 50%;
+}
+.right-celeb-life-wrapper{
+  position: relative;
+  width: fit-content;
+}
+.right-celeb-life .right-mid-sparkle-big{
+  top: 55%;
+  right: 5%;
 }
 .title-normal{
   font-family: var(--mainFont);
@@ -505,6 +612,44 @@ p, h2{
   background: url('../public/images/glitterbg.jpg') repeat;
   background-clip: text;
   line-height: 1;
+  position: relative;
+}
+.title-gold .celeb-sparkle1{
+  position: absolute;
+  left: -10px;
+  top: -40px;
+}
+.title-gold .celeb-sparkle2{
+  position: absolute;
+  right: -60px;
+  top: 0px;
+}
+.right-celeb-life .section-title{
+  display: flex;
+  flex-direction: column;
+}
+.twinkle{
+  position: absolute;
+  animation: twinkle 3s linear infinite;
+}
+.twinkle img{
+  width: 100%;
+}
+.right-celeb-life .temp-sparkle{
+  right: 0px;
+  top: 75%;
+}
+.right-celeb-life .title-gold .temp-sparkle1{
+  position: absolute;
+  left: -20px;
+  top: -50px;
+  width: 70px;
+}
+.right-celeb-life .title-gold .temp-sparkle2{
+  position: absolute;
+  right: 0px;
+  bottom: -30px;
+  width: 70px;
 }
 .section-subtitle{
   font-size: 2rem;
@@ -518,10 +663,12 @@ p, h2{
 }
 .logo-bg{
   position: absolute;
-  width: 427px;
-  height: 467px;
-  background: url('../public//images/logobig.png') no-repeat;
+  width: 500px;
+  height: 600px;
+  background: url('../public/images/goldlogo.svg') no-repeat;
+  background-size: cover;
   right: 0px;
+  opacity: 0.7;
   top: -150px;
 }
 .global-title-wrapper{
@@ -598,6 +745,13 @@ p, h2{
   background: var(--secondaryBlack);
   padding: 40px 0px 00px 0px;
   text-align: center;
+  position: relative;
+}
+.amenities .left-mid-sparkle{
+  bottom: 15%;
+  top: auto;
+  left: 0px;
+  animation: ballBounce 15s ease infinite;
 }
 .amenities-carousel-wrapper{
   display: flex;
@@ -661,7 +815,9 @@ p, h2{
   height: 653px;
   margin-top: -70px;
   text-align: right;
-  border: 15px solid var(--primaryYellow);
+  border: 15px solid transparent;
+  background: url('../public/images/glitterbg.jpg') repeat;
+  background-clip: border-box;
   border-right: 0px;
 }
 .swiper-pagination.swiper-pagination-fraction{
@@ -670,10 +826,64 @@ p, h2{
   top: 73%;
   right: 0px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   font-size: 1.2rem;
   width: 100px;
   left: 100%;
+}
+/* Floor plans styles */
+.floor-plans{
+  background: var(--secondaryBlack);
+  padding: 40px 0px;
+}
+.floor-plans-wrapper{
+  text-align: center;
+  position: relative;
+}
+.floor-plans-wrapper .section-title{
+  margin-bottom: 40px;
+}
+.floor-plans-wrapper img{
+  max-height: 80vh;
+}
+.floor-plans-wrapper .swiper{
+  position: static;
+}
+.floor-plans-wrapper .swiper-button-prev, .floor-plans-wrapper .swiper-button-next{
+  width: 55px;
+  height: 26px;
+  position: absolute;
+  top: 80%;
+  right: 0px;
+  left: auto;
+}
+.floor-plans-wrapper .swiper-button-next{
+  right: 100px;
+}
+.floor-plans-wrapper .swiper-button-prev{
+  right: 200px;
+}
+.floor-plans-wrapper .swiper-button-prev:after{
+  content: '';
+  background: url('../public/images/rightarrow.png') no-repeat;
+  transform: rotate(-180deg);
+  -webkit-transform: rotate(-180deg);
+  display: block;
+  width: 55px;
+  height: 26px;
+}
+.floor-plans-wrapper .swiper-button-next:after{
+  content: '';
+  background: url('../public/images/rightarrow.png') no-repeat;
+  display: block;
+  width: 55px;
+  height: 26px;
+}
+.floor-plans-wrapper .swiper-pagination.swiper-pagination-fraction{
+  left: auto;
+  bottom: 20px;
+  top: auto;
+  right: 30px;
 }
 /* Location styles */
 .location{
@@ -682,7 +892,7 @@ p, h2{
 .map{
   width: 60%;
   height: 100%;
-  background: url('../public/images/map.webp') no-repeat left;
+  background: url('../public/images/map.webp') no-repeat 25% center;
   background-size: cover;
 }
 .get-in-touch-wrapper{
@@ -758,4 +968,24 @@ p, h2{
   background-clip: text;
   font-weight: 300;
   font-size: 8rem;
+}
+
+/* Keyframes */
+@keyframes twinkle {
+  0%{
+    transform: scale(0);
+  }50%{
+    transform: scale(1);
+  }100%{
+    transform: scale(0);
+  }
+}
+@keyframes ballBounce{
+  0%{
+    transform: translate(10px, -100px);
+  }50%{
+    transform: translate(50px, 100px);
+  }100%{
+    transform: translate(10px, -100px);
+  }
 }

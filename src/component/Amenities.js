@@ -1,5 +1,6 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {Navigation, Pagination, Controller, EffectFade} from "swiper"
+import {gsap} from "gsap"
 import {Swiper, SwiperSlide} from "swiper/react"
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -7,11 +8,35 @@ import 'swiper/css/pagination'
 
 export const Amenities = () => {
 
-    const [firstSwiper, setFirstSwiper] = useState(null);
-    const [secondSwiper, setSecondSwiper] = useState(null);
+    useEffect(() => {
+        gsap.to(".amenities-carousel-right", {
+            yPercent: -10,
+            ease: "none",
+            scrollTrigger: {
+              trigger: ".amenities",
+              // start: "top bottom", // the default values
+              // end: "bottom top",
+              scrub: true,
+              markers: true
+            },
+        });
+
+        gsap.to(".amenities .section-title", {
+            yPercent: -40,
+            ease: "none",
+            scrollTrigger: {
+              trigger: ".amenities",
+              // start: "top bottom", // the default values
+              // end: "bottom top",
+              scrub: true,
+              markers: true
+            },
+        });
+    }, [])
 
     return (
-        <section className="amenities">
+        <section className="amenities" id="amenities">
+            <div className="sparkles left-mid-sparkle"></div>
             <h2 className="section-title">AMENITIES</h2>
             <div className="amenities-carousel-wrapper">
                 <div className="amenities-carousel-left">
