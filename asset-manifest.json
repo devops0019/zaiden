@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/zaiden/static/css/main.9460b776.css",
-    "main.js": "/zaiden/static/js/main.b06fe482.js",
+    "main.js": "/zaiden/static/js/main.4ff4e47f.js",
     "static/js/787.001ee0dc.chunk.js": "/zaiden/static/js/787.001ee0dc.chunk.js",
     "static/media/goldlogo.svg": "/zaiden/static/media/goldlogo.f0ace8e1ff9f21d96a29.svg",
     "static/media/celeblife.png": "/zaiden/static/media/celeblife.851135fa80bf7dc0e91f.png",
@@ -13,11 +13,11 @@
     "static/media/granjonRegular.woff2": "/zaiden/static/media/granjonRegular.5ac2919815f459849a0b.woff2",
     "index.html": "/zaiden/index.html",
     "main.9460b776.css.map": "/zaiden/static/css/main.9460b776.css.map",
-    "main.b06fe482.js.map": "/zaiden/static/js/main.b06fe482.js.map",
+    "main.4ff4e47f.js.map": "/zaiden/static/js/main.4ff4e47f.js.map",
     "787.001ee0dc.chunk.js.map": "/zaiden/static/js/787.001ee0dc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9460b776.css",
-    "static/js/main.b06fe482.js"
+    "static/js/main.4ff4e47f.js"
   ]
 }
