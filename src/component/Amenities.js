@@ -17,7 +17,6 @@ export const Amenities = () => {
               // start: "top bottom", // the default values
               // end: "bottom top",
               scrub: true,
-              markers: true
             },
         });
 
@@ -29,7 +28,6 @@ export const Amenities = () => {
               // start: "top bottom", // the default values
               // end: "bottom top",
               scrub: true,
-              markers: true
             },
         });
     }, [])

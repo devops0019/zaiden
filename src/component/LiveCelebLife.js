@@ -7,7 +7,10 @@ export const LiveCelebLife = () => {
         gsap.to(".title-gold", {
             xPercent: 0,
             scrollTrigger: {
-                trigger: "celeblife-wrapper",
+                trigger: ".celeblife-wrapper",
+                start: "top 20%",
+                scrub: true,
+                markers: true
             }
         })
     }, [])

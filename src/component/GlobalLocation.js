@@ -13,7 +13,6 @@ export const GlobalLocation = () => {
               // start: "top bottom", // the default values
               // end: "bottom top",
               scrub: true,
-              markers: true
             },
         });
 
@@ -25,7 +24,7 @@ export const GlobalLocation = () => {
               // start: "top bottom", // the default values
               // end: "bottom top",
               scrub: true,
-              markers: true
+              //markers: true
             },
         });
 
@@ -37,7 +36,7 @@ export const GlobalLocation = () => {
               // start: "top bottom", // the default values
               // end: "bottom top",
               scrub: true,
-              markers: true
+              //markers: true
             },
         });
     }, [])

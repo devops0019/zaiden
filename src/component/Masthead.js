@@ -34,7 +34,7 @@ export const Masthead = () => {
             ease: Power1.easeIn
         });
 
-        const movableElementsWrapper = movableRect.current;
+        /* const movableElementsWrapper = movableRect.current;
         const speed = 0.35;
         const items = gsap.utils.toArray(movableElementsWrapper.children).map(element => {
             return {
@@ -60,7 +60,7 @@ export const Masthead = () => {
               item.xSet(item.shiftValue * mouse.x * dt);
               item.ySet(item.shiftValue * mouse.y * dt);
             });
-        });
+        }); */
 
         /* gsap.fromTo(".elevation-wrapper img",
         {
