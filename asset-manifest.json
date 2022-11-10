@@ -1,22 +1,23 @@
 {
   "files": {
-    "main.css": "/zaiden/static/css/main.b9527663.css",
+    "main.css": "/zaiden/static/css/main.066663f1.css",
     "main.js": "/zaiden/static/js/main.f8139a73.js",
     "static/js/787.001ee0dc.chunk.js": "/zaiden/static/js/787.001ee0dc.chunk.js",
     "static/media/goldlogo.svg": "/zaiden/static/media/goldlogo.9a3befd010cc4521f7fa.svg",
     "static/media/location-min.jpg": "/zaiden/static/media/location-min.3fcdda60411e68c3612a.jpg",
     "static/media/celeblife.png": "/zaiden/static/media/celeblife.851135fa80bf7dc0e91f.png",
+    "static/media/bling.gif": "/zaiden/static/media/bling.8efcfbc602128b5139dd.gif",
     "static/media/granjonRegular.svg": "/zaiden/static/media/granjonRegular.9f6c9c12d6ae815ecb68.svg",
     "static/media/granjonRegular.eot": "/zaiden/static/media/granjonRegular.87908f812b39a7c1a8de.eot",
     "static/media/granjonRegular.woff": "/zaiden/static/media/granjonRegular.03689570fe3895b2dd44.woff",
     "static/media/granjonRegular.woff2": "/zaiden/static/media/granjonRegular.5ac2919815f459849a0b.woff2",
     "index.html": "/zaiden/index.html",
-    "main.b9527663.css.map": "/zaiden/static/css/main.b9527663.css.map",
+    "main.066663f1.css.map": "/zaiden/static/css/main.066663f1.css.map",
     "main.f8139a73.js.map": "/zaiden/static/js/main.f8139a73.js.map",
     "787.001ee0dc.chunk.js.map": "/zaiden/static/js/787.001ee0dc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b9527663.css",
+    "static/css/main.066663f1.css",
     "static/js/main.f8139a73.js"
   ]
 }
