@@ -121,9 +121,15 @@ export const Amenities = () => {
                     </Swiper>
                 </div>
                 <div className="amenities-desktop-wrapper mobile-hide">
-                    <div className="amenities-block kidszone"></div>
-                    <div className="amenities-block indulgence"></div>
-                    <div className="amenities-block elderly"></div>
+                    <div className="amenities-block kidszone">
+                        <p>Kids Zone</p>
+                    </div>
+                    <div className="amenities-block indulgence">
+                        <p>Indulgence</p>
+                    </div>
+                    <div className="amenities-block elderly">
+                        <p>Elderly</p>
+                    </div>
                 </div>
             </div>
         </section>

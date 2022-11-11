@@ -925,6 +925,16 @@ p, h2{
   margin:0px 10px;
   position: absolute;
 }
+.amenities-block p{
+  position: absolute;
+  bottom: 5px;
+  right: 0px;
+  left: 0px;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--white);
+}
 .indulgence{
   background: url("../public/images/amenities/indulgence.jpg") no-repeat 60%;
   width: 500px;
