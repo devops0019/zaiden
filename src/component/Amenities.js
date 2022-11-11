@@ -1,15 +1,16 @@
-import React, {useState, useEffect} from "react";
-import {Navigation, Pagination, Controller, EffectFade} from "swiper"
-import {gsap} from "gsap"
+import React, {useEffect} from "react";
+import {Navigation, Pagination, Controller, EffectFade, Autoplay} from "swiper"
+import {gsap, Power1} from "gsap"
 import {Swiper, SwiperSlide} from "swiper/react"
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
+import 'swiper/css/effect-fade'
 
 export const Amenities = () => {
 
     useEffect(() => {
-        gsap.to(".amenities-carousel-right", {
+        /* gsap.to(".amenities-carousel-right", {
             yPercent: -10,
             ease: "none",
             scrollTrigger: {
@@ -29,7 +30,40 @@ export const Amenities = () => {
               // end: "bottom top",
               scrub: true,
             },
+        }); */
+
+        gsap.set(".kidszone, .elderly", {
+            yPercent: 40
+        })
+
+        gsap.to(".indulgence", {
+            yPercent: -20,
+            ease: Power1.easeInOut,
+            scrollTrigger: {
+                trigger: ".amenities",
+                start: "top 90%",
+                scrub: true
+            }
         });
+        gsap.to(".kidszone", {
+            yPercent: -40,
+            ease: Power1.easeInOut,
+            scrollTrigger: {
+                trigger: ".amenities",
+                start: "top 90%",
+                scrub: true
+            }
+        })
+        gsap.to(".elderly", {
+            yPercent: -20,
+            ease: Power1.easeInOut,
+            scrollTrigger: {
+                trigger: ".amenities",
+                start: "top 90%",
+                scrub: true
+            }
+        })
+        
     }, [])
 
     return (
@@ -37,55 +71,59 @@ export const Amenities = () => {
             <div className="sparkles left-mid-sparkle"></div>
             <h2 className="section-title">AMENITIES</h2>
             <div className="amenities-carousel-wrapper">
-                <div className="amenities-carousel-left">
+                <div className="amenities-carousel-left desktop-hide">
                     <Swiper
-                        modules={[Navigation,Pagination, Controller]}
+                        modules={[Navigation,Pagination, Controller, EffectFade, Autoplay]}
                         pagination={{clickable: false, type: "fraction"}}
                         loop={true}
                         navigation
+                        effect="fade"
+                        autoplay={{
+                            delay: 5000,
+                            disableOnInteraction: false,
+                        }}
                     >
                         <SwiperSlide>
-                            <h2 className="slider-title">INDULGENCE</h2>
-                            <p className="slider-description">Let us lead you on a journey to <strong>“Rediscover Yourself”</strong> with our wide range of wellness amenities.</p>
+                            <div className="amenities-left-content">
+                                <h2 className="slider-title">INDULGENCE</h2>
+                                <p className="slider-description">Let us lead you on a journey to <strong>“Rediscover Yourself”</strong> with our wide range of wellness amenities.</p>
+                            </div>
+                            <div className="amenities-right-image"><img src="images/amenities/indulgence.jpg" alt="Indulgence" /></div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <h2 className="slider-title">KIDS ZONE</h2>
-                            <p className="slider-description">We offer a quintessential playground for your kids to learn, grow and get inspired at. Let the kids play the day away.</p>
+                            <div className="amenities-left-content">
+                                <h2 className="slider-title">KIDS ZONE</h2>
+                                <p className="slider-description">We offer a quintessential playground for your kids to learn, grow and get inspired at. Let the kids play the day away.</p>
+                            </div>
+                            <div className="amenities-right-image"><img src="images/amenities/kids-zone.jpg" alt="Kids Zone" /></div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <h2 className="slider-title">ELDERLY</h2>
-                            <p className="slider-description">Unfolding a wide range of amenities for your parents to immerse into and relax their mind, body and soul.</p>
+                            <div className="amenities-left-content">
+                                <h2 className="slider-title">ELDERLY</h2>
+                                <p className="slider-description">Unfolding a wide range of amenities for your parents to immerse into and relax their mind, body and soul.</p>
+                            </div>
+                            <div className="amenities-right-image"><img src="images/amenities/elderly.jpg" alt="Elderly" /></div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <h2 className="slider-title">CELEB LIFE</h2>
-                            <p className="slider-description">Your connoisserial living deserves everything majestic! Find unlimited entertainment at your fingertips with your life at Roswalt Zaiden</p>
+                            <div className="amenities-left-content">
+                                <h2 className="slider-title">CELEB LIFE</h2>
+                                <p className="slider-description">Your connoisserial living deserves everything majestic! Find unlimited entertainment at your fingertips with your life at ROSWALT ZAIDEN</p>
+                            </div>
+                            <div className="amenities-right-image"><img src="images/amenities/celeblife.jpg" alt="Celeb Life" /></div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <h2 className="slider-title">AMENITY RICH</h2>
-                            <p className="slider-description">Thoughtfully created amenities, elevate your spirit; Take a plunge into the aisles of high-end entertainment expanse.</p>
+                            <div className="amenities-left-content">
+                                <h2 className="slider-title">AMENITY RICH</h2>
+                                <p className="slider-description">Thoughtfully created amenities, elevate your spirit; Take a plunge into the aisles of high-end entertainment expanse.</p>
+                            </div>
+                            <div className="amenities-right-image"><img src="images/amenities/amenity-rich.jpg" alt="Amenity Rich" /></div>
                         </SwiperSlide>
                     </Swiper>
                 </div>
-                <div className="amenities-carousel-right">
-                    <Swiper
-                        modules={[Controller]}
-                    >
-                        <SwiperSlide>
-                            <img src="images/indulgence.jpg" alt="Indulgence" />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <img src="images/indulgence.jpg" alt="Indulgence" />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <img src="images/indulgence.jpg" alt="Indulgence" />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <img src="images/indulgence.jpg" alt="Indulgence" />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <img src="images/indulgence.jpg" alt="Indulgence" />
-                        </SwiperSlide>
-                    </Swiper>
+                <div className="amenities-desktop-wrapper mobile-hide">
+                    <div className="amenities-block kidszone"></div>
+                    <div className="amenities-block indulgence"></div>
+                    <div className="amenities-block elderly"></div>
                 </div>
             </div>
         </section>

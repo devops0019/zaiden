@@ -1,23 +1,26 @@
 {
   "files": {
-    "main.css": "/zaiden/static/css/main.9460b776.css",
-    "main.js": "/zaiden/static/js/main.671947b8.js",
+    "main.css": "/zaiden/static/css/main.64d0fdb5.css",
+    "main.js": "/zaiden/static/js/main.82357d43.js",
     "static/js/787.001ee0dc.chunk.js": "/zaiden/static/js/787.001ee0dc.chunk.js",
-    "static/media/goldlogo.svg": "/zaiden/static/media/goldlogo.f0ace8e1ff9f21d96a29.svg",
+    "static/media/goldlogo.svg": "/zaiden/static/media/goldlogo.9a3befd010cc4521f7fa.svg",
+    "static/media/location-min.jpg": "/zaiden/static/media/location-min.3fcdda60411e68c3612a.jpg",
     "static/media/celeblife.png": "/zaiden/static/media/celeblife.851135fa80bf7dc0e91f.png",
-    "static/media/glitterbg.jpg": "/zaiden/static/media/glitterbg.f3365237b5585ea4480b.jpg",
+    "static/media/bling.gif": "/zaiden/static/media/bling.8efcfbc602128b5139dd.gif",
     "static/media/granjonRegular.svg": "/zaiden/static/media/granjonRegular.9f6c9c12d6ae815ecb68.svg",
+    "static/media/kids-zone.jpg": "/zaiden/static/media/kids-zone.8d92e7d9dc264f78651e.jpg",
+    "static/media/indulgence.jpg": "/zaiden/static/media/indulgence.0760079b37e403602a7b.jpg",
+    "static/media/elderly.jpg": "/zaiden/static/media/elderly.93e92e897fbc6e56155b.jpg",
     "static/media/granjonRegular.eot": "/zaiden/static/media/granjonRegular.87908f812b39a7c1a8de.eot",
-    "static/media/map.webp": "/zaiden/static/media/map.b444ef1f7105120b8607.webp",
     "static/media/granjonRegular.woff": "/zaiden/static/media/granjonRegular.03689570fe3895b2dd44.woff",
     "static/media/granjonRegular.woff2": "/zaiden/static/media/granjonRegular.5ac2919815f459849a0b.woff2",
     "index.html": "/zaiden/index.html",
-    "main.9460b776.css.map": "/zaiden/static/css/main.9460b776.css.map",
-    "main.671947b8.js.map": "/zaiden/static/js/main.671947b8.js.map",
+    "main.64d0fdb5.css.map": "/zaiden/static/css/main.64d0fdb5.css.map",
+    "main.82357d43.js.map": "/zaiden/static/js/main.82357d43.js.map",
     "787.001ee0dc.chunk.js.map": "/zaiden/static/js/787.001ee0dc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9460b776.css",
-    "static/js/main.671947b8.js"
+    "static/css/main.64d0fdb5.css",
+    "static/js/main.82357d43.js"
   ]
 }

@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
+import {gsap} from 'gsap'
 import {Header} from './component/Header'
 import {GetInTouchBtn} from './component/GetInTouchBtn'
 import {CommonGetinTouch} from './component/CommonGetinTouch'
@@ -12,24 +13,37 @@ import {Footer} from './component/Footer'
 
 function App() {
 
-  let [commonFormState, setCommonFormState] = useState(false);
+  useEffect(() => {
+    gsap.to(".logo-bg", {
+      rotate: 720,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".App",
+        scrub: true
+      }
+    })
+  }, [])
+
+  let [commonFormState, setCommonFormState] = useState(true);
 
   return (
     <div className="App">
+      <div className="logo-bg"></div>
       <Header
         setCommonFormState={setCommonFormState}
       />
       <CommonGetinTouch
         commonFormState={commonFormState}
+        setCommonFormState={setCommonFormState}
       />
-      <GetInTouchBtn />
+      <GetInTouchBtn setCommonFormState={setCommonFormState} />
       <Masthead />
       <LiveCelebLife />
       <GlobalLocation />
       <Amenities />
       <FloorPlans />
       <Location />
-      <Footer />
+      <Footer setCommonFormState={setCommonFormState} />
     </div>
   );
 }

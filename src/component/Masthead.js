@@ -1,14 +1,39 @@
-import React, {useRef, useEffect} from "react";
+import React, {useRef, useEffect, useState} from "react";
 import {gsap, Power1} from 'gsap';
 import {ScrollTrigger} from 'gsap/ScrollTrigger'
 
 export const Masthead = () => {
 
     const movableRect = useRef();
+    const mastheadMain = useRef();
+    let [imageLoaded, setImageLoaded] = useState(false);
 
     gsap.registerPlugin(ScrollTrigger);
 
+    const elevationImg = useRef();
+
     useEffect(() => {
+        gsap.fromTo(elevationImg.current, {
+            yPercent: 30,
+            ease: Power1.easeIn,
+        }, {
+            yPercent: 0,
+            duration: 1,
+            ease: Power1.easeInOut
+        })
+    },[]);
+
+    useEffect(() => {
+        let scaleX, scaleY = null;
+        const imageWidth = elevationImg.current.width;
+        let imageHeight = elevationImg.current.height;
+        const availableWidth = window.innerWidth;
+        const availableHeight = window.innerHeight;
+        scaleX = availableWidth/imageWidth;
+        scaleY = availableHeight/imageHeight;
+
+
+        
 
         gsap.timeline({
             scrollTrigger:{
@@ -18,7 +43,7 @@ export const Masthead = () => {
                 end: "top 80%",
                 scrub: 2,
             }
-        }).fromTo(".gold-logo", {
+        })/* .fromTo(".gold-logo", {
             autoAlpha: 1
         }, {
             autoAlpha: 0
@@ -26,13 +51,13 @@ export const Masthead = () => {
             autoAlpha: 1
         }, {
             autoAlpha: 0
-        }).fromTo(".elevation-wrapper img", {
+        }) */.fromTo(".elevation-wrapper img", {
             scale: 1,
             ease: Power1.easeIn
         },{
-            scale: 3.175,
+            scale: scaleX,
             ease: Power1.easeIn
-        });
+        })
 
         /* const movableElementsWrapper = movableRect.current;
         const speed = 0.35;
@@ -80,7 +105,7 @@ export const Masthead = () => {
                 scrub: 0.5,
                 markers: true
             }
-        })
+        })*/
 
         gsap.fromTo(".gold-logo", {
             opacity: 1
@@ -92,7 +117,6 @@ export const Masthead = () => {
                 start: "top 20%",
                 end: "top 80%",
                 scrub: 0.5,
-                markers: true
             }
         })
 
@@ -105,31 +129,30 @@ export const Masthead = () => {
                 trigger: ".elevation-wrapper",
                 start: "top 20%",
                 end: "top 80%",
-                scrub: 0.5,
-                markers: true
+                scrub: 0.5
             }
-        }) */
-    }, [])
+        })
+    }, [imageLoaded])
 
 
     return (
-        <section className="masthead" id="masthead">
+        <section className="masthead" id="masthead" ref={mastheadMain}>
             <div className="main-container">
                 <div className="masthead-wrapper" ref={movableRect}>
                     <div className="sparkles left-top-sparkle" data-value="-5"></div>
                     <div className="sparkles right-mid-sparkle" data-value="5"></div>
                     <div className="sparkles right-mid-sparkle-big" data-value="5"></div>
                     <div className="gold-logo" data-value="8">
-                        <div className="twinkle left-top-twinkle">
+                        {/* <div className="twinkle left-top-twinkle">
                             <img src="images/temp-sparkle.png" alt="Sparkle" />
-                        </div>
+                        </div> */}
                         <img src="images/goldlogo.png" alt="Roswalt Zaiden" />
-                        <div className="twinkle left-bottom-twinkle">
+                        {/* <div className="twinkle left-bottom-twinkle">
                             <img src="images/temp-sparkle.png" alt="Sparkle" />
-                        </div>
+                        </div> */}
                     </div>
-                    <div className="elevation-wrapper" data-value="-15">
-                        <img src="images/mainelevation.jpg" alt="Main elevation" />
+                    <div className="elevation-wrapper">
+                        <img onLoad={() => setImageLoaded(true)} src="images/elevation.jpg" alt="Main elevation" ref={elevationImg} />
                     </div>
                     <h1 className="masthead-title" data-value="-5">ROSWALT ZAIDEN</h1>
                 </div>
