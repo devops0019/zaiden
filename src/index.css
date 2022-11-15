@@ -803,7 +803,7 @@ p, h2{
 /* Amenities styles */
 .amenities{
   background: var(--primaryBlack);
-  padding: 40px 0px 00px 0px;
+  padding: 80px 0px 40px 0px;
   text-align: center;
   position: relative;
 }
@@ -966,7 +966,7 @@ p, h2{
   margin-bottom: 40px;
 }
 .floor-plans-wrapper img{
-  max-height: 80vh;
+  max-height: 70vh;
 }
 .floor-plans-wrapper .swiper{
   position: static;
@@ -1076,7 +1076,7 @@ p, h2{
   padding: 0px 50px;
 }
 .footer-left{
-  max-width: 240px;
+  max-width: 260px;
 }
 .footer-left p{
   margin: 10px 0px;
@@ -1119,7 +1119,8 @@ p, h2{
   text-align: center;
   padding: 40px 0px;
   font-family: var(--mainFont);
-  color: var(--primaryYellow);
+  color: transparent;
+  background: url("../public/images/bling.gif");
   background-repeat: repeat;
   background-clip: text;
   font-weight: 300;
@@ -1132,10 +1133,11 @@ p, h2{
 .social-icons-list{
   display: flex;
   justify-content: center;
+  align-items: flex-end;
 }
 .social-icons-list li{
   width: 30px;
-  margin-right: 5px;
+  margin-right: 10px;
 }
 .social-icons-list li:last-child{
   margin-right: 0px;
