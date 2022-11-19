@@ -33,7 +33,7 @@ export const Masthead = () => {
         scaleY = availableHeight/imageHeight;
 
 
-        
+
 
         gsap.timeline({
             scrollTrigger:{
@@ -152,7 +152,7 @@ export const Masthead = () => {
                         </div> */}
                     </div>
                     <div className="elevation-wrapper">
-                        <img onLoad={() => setImageLoaded(true)} src="images/elevation.jpg" alt="Main elevation" ref={elevationImg} />
+                        <img onLoad={() => setImageLoaded(true)} src="images/elevation.webp" alt="Main elevation" ref={elevationImg} />
                     </div>
                     <h1 className="masthead-title" data-value="-5">ROSWALT ZAIDEN</h1>
                 </div>

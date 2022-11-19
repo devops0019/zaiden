@@ -10,6 +10,7 @@ export const Footer = ({setCommonFormState}) => {
                             <p>Contact: <a href="tel:+917507070707">7507070707</a></p>
                             <p>Email: <a href="mailto:info@roswalt.com">info@roswalt.com</a></p>
                             <p>Address: A S Hightech, 16, Koteshwar Palace CHSL, Jeeva Mahale Road, Andheri (East), Mumbai - 400069.</p>
+                            <p>RERA No: P51800047680</p>
                         </div>
                         <div className="footer-right">
                             <button type="button" onClick={() => {setCommonFormState(true)}}><span><img src="images/download.svg" alt="Download brochure" /></span><span className="mobile-hide">Download brochure</span></button>

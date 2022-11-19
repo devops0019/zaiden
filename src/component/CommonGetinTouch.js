@@ -1,4 +1,5 @@
 import React from "react";
+import {getAuthToken} from "../utils"
 
 export const CommonGetinTouch = ({commonFormState, setCommonFormState}) => {
 
@@ -24,7 +25,7 @@ export const CommonGetinTouch = ({commonFormState, setCommonFormState}) => {
                             <span className="validation-error"></span>
                         </fieldset>
                         <fieldset className="form-fieldset btn-fieldset">
-                            <button className="submit-btn">Submit</button>
+                            <button className="submit-btn" onClick={() => getAuthToken()}>Submit</button>
                         </fieldset>
                     </form>
                 </div>

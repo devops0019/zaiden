@@ -53,7 +53,7 @@ export const GlobalLocation = () => {
             <div className="main-container">
                 <div className="global-title-wrapper">
                     <h2 className="section-title global-title">GLOBALLY LOVED <br/>LOCATION</h2>
-                    <p className="section-description">Andheri is a globally accepted residential landmark. It is a central point that connects the whole city. <br/><strong>ROSWALT ZAIDEN</strong> located at  very convenient, connected and offers exemplery lifestyle. Andheri is the most desirable residential address one seeks for the city.</p>
+                    <p className="section-description">Andheri is a globally accepted residential landmark. It is a central point that connects the whole city. <br/><strong>ROSWALT ZAIDEN</strong> is situated at one such location where lifestyle, community and serenity harmonizes. Andheri is the most desirable residential address one seeks for the city.</p>
                 </div>
                 <ImageDraggable />
             </div>

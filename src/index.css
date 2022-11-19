@@ -427,6 +427,9 @@ p, h2{
   cursor: pointer;
   z-index: 2;
 }
+.close-button svg{
+  fill: gray;
+}
 /* Header styles */
 .header{
   position: fixed;
@@ -539,7 +542,7 @@ p, h2{
   background: var(--primaryBlack);
   position: relative;
   width: 100%;
-  height: calc(max(110vw, 100vh));
+  height: calc(max(103vw, 100vh));
   z-index: 2;
 }
 .sparkles{
@@ -1138,6 +1141,10 @@ p, h2{
 .social-icons-list li{
   width: 30px;
   margin-right: 10px;
+}
+.social-icons-list li.instagram{
+  width: 26px;
+  margin-right: 12px;
 }
 .social-icons-list li:last-child{
   margin-right: 0px;
