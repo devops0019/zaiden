@@ -30,27 +30,15 @@ export const GlobalLocation = () => {
               start: "top bottom", // the default values
               end: "bottom bottom",
               scrub: true,
-              //markers: true
             },
         });
-
-        /* gsap.to(".logo-bg", {
-            yPercent: 150,
-            ease: Power1.easeIn,
-            scrollTrigger: {
-              trigger: ".global-location",
-              // start: "top bottom", // the default values
-              // end: "bottom top",
-              scrub: true,
-              //markers: true
-            },
-        }); */
     }, [])
 
     return (
         <section className="global-location full-height">
-            {/* <div className="logo-bg"></div> */}
             <div className="main-container">
+                <div className="sparkles left-top-sparkle" data-value="-5"></div>
+                <div className="sparkles right-mid-sparkle" data-value="5"></div>
                 <div className="global-title-wrapper">
                     <h2 className="section-title global-title">GLOBALLY LOVED <br/>LOCATION</h2>
                     <p className="section-description">Andheri is a globally accepted residential landmark. It is a central point that connects the whole city. <br/><strong>ROSWALT ZAIDEN</strong> is situated at one such location where lifestyle, community and serenity harmonizes. Andheri is the most desirable residential address one seeks for the city.</p>

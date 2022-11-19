@@ -2,6 +2,8 @@ import React, {useEffect, useState} from "react";
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDownload } from "@fortawesome/free-solid-svg-icons";
 
 export const Header = ({setCommonFormState}) => {
 
@@ -10,7 +12,7 @@ export const Header = ({setCommonFormState}) => {
     let [isActive, setIsActive] = useState(false)
 
     useEffect(() => {
-        document.querySelectorAll(".nav-list li a, .header-logo a").forEach((btn, idx) => {
+        document.querySelectorAll(".local-links, .header-logo a").forEach((btn, idx) => {
             btn.addEventListener("click", (e) => {
                 e.preventDefault();
                 document.querySelectorAll(".nav-list li a").forEach((i,k) => {
@@ -43,10 +45,10 @@ export const Header = ({setCommonFormState}) => {
                     <nav className="header-nav">
                         <div className={`nav-wrapper ${isActive ? 'is-active' : ''}`}>
                             <ul className="nav-list">
-                                <li><a href="#masthead" onClick={() => setIsActive(false)}>Home</a></li>
-                                <li><a href="#amenities" onClick={() => setIsActive(false)}>Amenities</a></li>
-                                <li><a href="#floorplan" onClick={() => setIsActive(false)}>Floor Plans</a></li>
-                                <li><a href="#location" onClick={() => setIsActive(false)}>Location</a></li>
+                                <li><a href="#masthead" onClick={() => setIsActive(false)} className="local-links">Home</a></li>
+                                <li><a href="https://www.roswalt.com/about.php">About</a></li>
+                                <li><a href="#amenities" onClick={() => setIsActive(false)} className="local-links">Amenities</a></li>
+                                <li><a href="#location" onClick={() => setIsActive(false)} className="local-links">Location</a></li>
                             </ul>
                         </div>
                     </nav>
@@ -56,7 +58,7 @@ export const Header = ({setCommonFormState}) => {
                         </a>
                     </div>
                     <div className="download-brochure">
-                        <button type="button" onClick={() => {setCommonFormState(true)}}><span><img src="images/download.svg" alt="Download brochure" /></span><span className="mobile-hide">Download brochure</span></button>
+                        <button type="button" onClick={() => {setCommonFormState(true)}}><span><FontAwesomeIcon icon={faDownload} /></span><span className="mobile-hide">Download brochure</span></button>
                     </div>
                 </div>
             </div>

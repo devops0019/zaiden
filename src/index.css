@@ -13,12 +13,12 @@
   --secondaryFont: 'Montserrat', Arial, Helvetica, sans-serif;
   --primaryColor: #627b82;
   --primaryBlack: #000000;
-  --primaryYellow: #ffb400;
+  --primaryYellow: #B88D3C;
   --secondaryBlack: #141414;
   --secondaryColor: #8e988d;
   --white: #ffffff;
   --tertiaryColor: #e4e9e3;
-  --sparklesBg: rgba(255, 180, 0, .3)
+  --sparklesBg: rgba(255, 180, 0, .3);
 }
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
@@ -50,8 +50,20 @@ body {
   margin: 0;
   font-family: var(--secondaryFont);
   background-color: var(--primaryBlack);
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: dark;
 }
-
+body::-webkit-scrollbar {
+  width: 8px;
+}
+body::-webkit-scrollbar-track {
+  background: var(--secondaryBlack);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--primaryYellow) ;
+  border-radius: 6px;
+}
 /**
  * Render the `main` element consistently in IE.
  */
@@ -427,9 +439,6 @@ p, h2{
   cursor: pointer;
   z-index: 2;
 }
-.close-button svg{
-  fill: gray;
-}
 /* Header styles */
 .header{
   position: fixed;
@@ -536,6 +545,12 @@ p, h2{
   transform: rotate(-90deg);
   cursor: pointer;
   border: none;
+  display: flex;
+  align-items: center;
+}
+.call-icon{
+  display: inline-block;
+  margin:8px 5px 0px;
 }
 /* Masthead styles */
 .masthead{
@@ -557,24 +572,28 @@ p, h2{
   width: 70px;
   height: 70px;
   left: -50px;
+  animation: ballBounce 15s ease infinite;
 }
 .left-mid-sparkle{
   top: 55%;
   left: 15%;
   width: 60px;
   height: 60px;
+  animation: ballBounce1 15s ease infinite;
 }
 .right-mid-sparkle{
   top: 70%;
   right: 5%;
   width: 60px;
   height: 60px;
+  animation: ballBounce1 15s ease infinite;
 }
 .right-mid-sparkle-big{
   top: 70%;
   right: 2%;
   width: 100px;
   height: 100px;
+  animation: ballBounce 15s ease infinite;
 }
 .masthead-wrapper{
   position: relative;
@@ -927,6 +946,31 @@ p, h2{
   background-size: cover;
   margin:0px 10px;
   position: absolute;
+  cursor: pointer;
+}
+.amenities-block:before{
+  content: '';
+  position: absolute;
+  background: rgba(0,0,0,0.6);
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0;
+  transition: all .3s ease;
+}
+.amenities-block:after{
+  content: 'View Details';
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  right: 0px;
+  color: #ffffff;
+  opacity: 0;
+  transition: all .3s ease;
+}
+.amenities-block:hover:before, .amenities-block:hover:after{
+  opacity: 1;
 }
 .amenities-block p{
   position: absolute;
@@ -937,6 +981,13 @@ p, h2{
   text-align: center;
   text-transform: uppercase;
   color: var(--white);
+}
+.close-details{
+  position: absolute;
+  right: 30px;
+  top: 15px;
+  color: var(--primaryYellow);
+  cursor: pointer;
 }
 .indulgence{
   background: url("../public/images/amenities/indulgence.jpg") no-repeat 60%;
@@ -955,6 +1006,92 @@ p, h2{
   width: 30%;
   height: 450px;
   right: 0;
+}
+.amenities-details{
+  position: absolute;
+  transform: translateX(100%);
+  width: 100%;
+  height: 100%;
+  padding: 80px 0px;
+  top: 0px;
+  background: var(--primaryBlack);
+  overflow-y: auto;
+  scrollbar-color: dark;
+  z-index: 4;
+  transition: all .5s ease;
+}
+.amenities-details::-webkit-scrollbar {
+  width: 8px;
+}
+.amenities-details::-webkit-scrollbar-track {
+  background: var(--secondaryBlack);
+}
+.amenities-details::-webkit-scrollbar-thumb {
+  background-color: var(--primaryYellow) ;
+  border-radius: 6px;
+}
+.amenities-details.show-details{
+  transform: translateX(0);
+}
+.amenities-details-inner{
+  width: 60%;
+  margin: 0px auto;
+  max-width: 100%;
+}
+.image-text-wrapper{
+  display: flex;
+  align-items: center;
+  margin-bottom: 80px;
+}
+.image-text-wrapper:last-child{
+  margin-bottom: 0px;
+}
+.image-text-wrapper.flex-reverse{
+  flex-flow: row-reverse;
+}
+.image-wrapper{
+  max-width: 350px;
+  margin-right: 50px;
+}
+.flex-reverse .image-wrapper{
+  margin-right: 0px;
+}
+.flex-reverse .text-wrapper{
+  margin-right: 50px;
+}
+.image-wrapper img{
+  max-width: 100%;
+}
+.text-wrapper{
+  color: var(--white);
+}
+.text-wrapper h3{
+  text-transform: uppercase;
+  color: var(--primaryYellow);
+  font-weight: 300;
+  font-size: 2.5rem;
+}
+.text-wrapper p{
+  font-size: 1.2rem;
+  line-height: 1.4;
+  margin-top: 5px;
+}
+.text-wrapper .icons-list{
+  margin-top: 70px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  gap: 30px;
+}
+.text-wrapper .icons-list li{
+  display: flex;
+  flex-direction: column;
+}
+.amenities-icon{
+  color: var(--primaryYellow);
+}
+.text-wrapper .icons-list li p{
+  font-size: 0.7rem;
 }
 /* Floor plans styles */
 .floor-plans{
@@ -1052,6 +1189,7 @@ p, h2{
 .input-text{
   width: 100%;
   padding: 10px;
+  border: none;
 }
 .btn-fieldset{
   margin-top: 40px;
@@ -1139,18 +1277,10 @@ p, h2{
   align-items: flex-end;
 }
 .social-icons-list li{
-  width: 30px;
-  margin-right: 10px;
-}
-.social-icons-list li.instagram{
-  width: 26px;
-  margin-right: 12px;
+  margin-right: 15px;
 }
 .social-icons-list li:last-child{
   margin-right: 0px;
-}
-.social-icons-list li img{
-  max-width: 100%;
 }
 /* Media queries */
 
@@ -1235,11 +1365,15 @@ p, h2{
 }
 
 @media only screen and (max-width: 768px){
+  body{
+    overflow-x: hidden;
+  }
   .gold-logo{
     left: 40%;
     top: 15%;
   }
   .elevation-wrapper img{
+    max-width: 100%;
     height: 70vh;
   }
   .full-height{
@@ -1247,7 +1381,7 @@ p, h2{
     min-height: 500px;
   }
   .masthead{
-    height: calc(max(100vw, 140vh))
+    height: calc(max(100vw, 120vh))
   }
   .left-celeb-life, .right-celeb-life{
     width: 100%;
@@ -1285,6 +1419,12 @@ p, h2{
   .amenities-left-content{
     padding: 100px 0px 100px 40px;
     margin-top: 0px;
+  }
+  .amenities-right-image img{
+    max-height: 360px;
+  }
+  .slider-description{
+    font-size: 0.9rem;
   }
   .amenities-carousel-left .swiper-button-prev, .amenities-carousel-left .swiper-button-next{
     top: 35%;
@@ -1330,6 +1470,9 @@ p, h2{
 }
 
 @media only screen and (max-width: 480px){
+  .amenities-details{
+    display: none;
+  }
   .main-container{
     max-width: calc(100% - 40px);
   }
@@ -1379,7 +1522,7 @@ p, h2{
     top: 38%;
   }
   .amenities-left-content{
-    padding-left: 30px;
+    padding-left: 15px;
   }
   .amenities-carousel-left .swiper-button-prev{
     left: 30px;
@@ -1450,5 +1593,14 @@ p, h2{
     transform: translate(50px, 100px);
   }100%{
     transform: translate(10px, -100px);
+  }
+}
+@keyframes ballBounce1{
+  0%{
+    transform: translate(50px, 100px);
+  }50%{
+    transform: translate(10px, -100px);
+  }100%{
+    transform: translate(50px, 100px);
   }
 }

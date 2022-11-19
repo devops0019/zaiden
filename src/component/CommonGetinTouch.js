@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import {getAuthToken} from "../utils"
 
 export const CommonGetinTouch = ({commonFormState, setCommonFormState}) => {
@@ -7,7 +9,7 @@ export const CommonGetinTouch = ({commonFormState, setCommonFormState}) => {
         <div className={`form-overlay ${commonFormState ? 'show' : 'hidden'}`}>
             <div className="get-in-touch">
                 <button className="close-button" type="button" onClick={() => setCommonFormState(false)}>
-                    <svg height="36" viewBox="0 0 48 48" width="36" fill="#ffb400" xmlns="http://www.w3.org/2000/svg"><path d="M38 12.83l-2.83-2.83-11.17 11.17-11.17-11.17-2.83 2.83 11.17 11.17-11.17 11.17 2.83 2.83 11.17-11.17 11.17 11.17 2.83-2.83-11.17-11.17z"/><path d="M0 0h48v48h-48z" fill="none"/></svg>
+                    <FontAwesomeIcon icon={faXmark} color="gray" fontSize={27} />
                 </button>
                 <div className="get-in-touch-wrapper">
                     <h3 className="git-title">Get In touch</h3>

@@ -1,13 +1,16 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import {Navigation, Pagination, Controller, EffectFade, Autoplay} from "swiper"
 import {gsap, Power1} from "gsap"
 import {Swiper, SwiperSlide} from "swiper/react"
+import {AmenitiesDetails} from "./AmenitiesDetails"
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/effect-fade'
 
 export const Amenities = () => {
+
+    let [showDetails, setShowDetails] = useState(false);
 
     useEffect(() => {
         /* gsap.to(".amenities-carousel-right", {
@@ -63,11 +66,14 @@ export const Amenities = () => {
                 scrub: true
             }
         })
-        
+
     }, [])
 
     return (
         <section className="amenities" id="amenities">
+            <div className={`amenities-details ${showDetails ? 'show-details': ''}`}>
+                <AmenitiesDetails setShowDetails={setShowDetails} />
+            </div>
             <div className="sparkles left-mid-sparkle"></div>
             <h2 className="section-title">AMENITIES</h2>
             <div className="amenities-carousel-wrapper">
@@ -120,14 +126,14 @@ export const Amenities = () => {
                         </SwiperSlide>
                     </Swiper>
                 </div>
-                <div className="amenities-desktop-wrapper mobile-hide">
+                <div className="amenities-desktop-wrapper mobile-hide" onClick={() => setShowDetails(true)}>
                     <div className="amenities-block kidszone">
                         <p>Kids Zone</p>
                     </div>
-                    <div className="amenities-block indulgence">
+                    <div className="amenities-block indulgence" onClick={() => setShowDetails(true)}>
                         <p>Indulgence</p>
                     </div>
-                    <div className="amenities-block elderly">
+                    <div className="amenities-block elderly" onClick={() => setShowDetails(true)}>
                         <p>Elderly</p>
                     </div>
                 </div>

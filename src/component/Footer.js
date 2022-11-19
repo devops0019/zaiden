@@ -1,4 +1,7 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebookF, faInstagram, faLinkedinIn, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import { faDownload } from "@fortawesome/free-solid-svg-icons";
 
 export const Footer = ({setCommonFormState}) => {
     return (
@@ -13,7 +16,7 @@ export const Footer = ({setCommonFormState}) => {
                             <p>RERA No: P51800047680</p>
                         </div>
                         <div className="footer-right">
-                            <button type="button" onClick={() => {setCommonFormState(true)}}><span><img src="images/download.svg" alt="Download brochure" /></span><span className="mobile-hide">Download brochure</span></button>
+                            <button type="button" onClick={() => {setCommonFormState(true)}}><span><FontAwesomeIcon icon={faDownload} /></span><span className="mobile-hide">Download brochure</span></button>
                         </div>
                     </div>
                     <div className="footer-lower-wrapper">
@@ -22,22 +25,22 @@ export const Footer = ({setCommonFormState}) => {
                             <ul className="social-icons-list">
                                 <li className="facebook">
                                     <a href="https://www.facebook.com/roswaltrealty" rel="noreferrer" target="_blank">
-                                        <img src="images/facebook.svg" alt="Facebook" />
+                                        <FontAwesomeIcon icon={faFacebookF} color="#B88D3C" fontSize={27} />
                                     </a>
                                 </li>
                                 <li className="instagram">
                                     <a href="https://www.instagram.com/roswaltrealty_mumbai" rel="noreferrer" target="_blank">
-                                        <img src="images/instagram.svg" alt="Instagram" />
+                                        <FontAwesomeIcon icon={faInstagram} color="#B88D3C" fontSize={27} />
                                     </a>
                                 </li>
                                 <li className="linkedin">
                                     <a href="https://www.linkedin.com/company/28707255/" rel="noreferrer" target="_blank">
-                                        <img src="images/linkedin.svg" alt="LinkedIn" />
+                                        <FontAwesomeIcon icon={faLinkedinIn} color="#B88D3C" fontSize={27} />
                                     </a>
                                 </li>
                                 <li className="youtube">
                                     <a href="https://www.youtube.com/channel/UCE5zUCQ5KCAf9LzLJYDWIeg" rel="noreferrer" target="_blank">
-                                        <img src="images/youtube.svg" alt="Youtube" />
+                                        <FontAwesomeIcon icon={faYoutube} color="#B88D3C" fontSize={27} />
                                     </a>
                                 </li>
                             </ul>

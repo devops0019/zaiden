@@ -143,13 +143,7 @@ export const Masthead = () => {
                     <div className="sparkles right-mid-sparkle" data-value="5"></div>
                     <div className="sparkles right-mid-sparkle-big" data-value="5"></div>
                     <div className="gold-logo" data-value="8">
-                        {/* <div className="twinkle left-top-twinkle">
-                            <img src="images/temp-sparkle.png" alt="Sparkle" />
-                        </div> */}
                         <img src="images/goldlogo.png" alt="Roswalt Zaiden" />
-                        {/* <div className="twinkle left-bottom-twinkle">
-                            <img src="images/temp-sparkle.png" alt="Sparkle" />
-                        </div> */}
                     </div>
                     <div className="elevation-wrapper">
                         <img onLoad={() => setImageLoaded(true)} src="images/elevation.webp" alt="Main elevation" ref={elevationImg} />
