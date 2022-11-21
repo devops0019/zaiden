@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 
-export const Header = ({setCommonFormState}) => {
+export const Header = ({setCommonFormState, setDownloadReq}) => {
 
     gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
@@ -58,7 +58,7 @@ export const Header = ({setCommonFormState}) => {
                         </a>
                     </div>
                     <div className="download-brochure">
-                        <button type="button" onClick={() => {setCommonFormState(true)}}><span><FontAwesomeIcon icon={faDownload} /></span><span className="mobile-hide">Download brochure</span></button>
+                        <button type="button" onClick={() => {setCommonFormState(true); setDownloadReq(true)}}><span><FontAwesomeIcon icon={faDownload} /></span><span className="mobile-hide">Download brochure</span></button>
                     </div>
                 </div>
             </div>

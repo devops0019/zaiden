@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faInstagram, faLinkedinIn, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 
-export const Footer = ({setCommonFormState}) => {
+export const Footer = ({setCommonFormState, setDownloadReq}) => {
     return (
         <footer className="footer">
             <div className="main-container">
@@ -16,7 +16,7 @@ export const Footer = ({setCommonFormState}) => {
                             <p>RERA No: P51800047680</p>
                         </div>
                         <div className="footer-right">
-                            <button type="button" onClick={() => {setCommonFormState(true)}}><span><FontAwesomeIcon icon={faDownload} /></span><span className="mobile-hide">Download brochure</span></button>
+                            <button type="button" onClick={() => {setCommonFormState(true); setDownloadReq(true)}}><span><FontAwesomeIcon icon={faDownload} /></span><span className="mobile-hide">Download brochure</span></button>
                         </div>
                     </div>
                     <div className="footer-lower-wrapper">

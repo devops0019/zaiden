@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {gsap} from 'gsap'
 import {Header} from './component/Header'
 import {GetInTouchBtn} from './component/GetInTouchBtn'
-import {CommonGetinTouch} from './component/CommonGetinTouch'
+import {CommonGetinTouchForm} from './component/CommonGetinTouch'
 import {Masthead} from './component/Masthead'
 import {LiveCelebLife} from './component/LiveCelebLife'
 import { GlobalLocation } from './component/GlobalLocation'
@@ -25,25 +25,28 @@ function App() {
   }, [])
 
   let [commonFormState, setCommonFormState] = useState(true);
+  let [downloadReq, setDownloadReq] = useState(false);
 
   return (
     <div className="App">
       <div className="logo-bg"></div>
       <Header
         setCommonFormState={setCommonFormState}
+        setDownloadReq={setDownloadReq}
       />
-      <CommonGetinTouch
+      <CommonGetinTouchForm
         commonFormState={commonFormState}
         setCommonFormState={setCommonFormState}
+        downloadReq={downloadReq}
       />
-      <GetInTouchBtn setCommonFormState={setCommonFormState} />
+      <GetInTouchBtn setCommonFormState={setCommonFormState} setDownloadReq={setDownloadReq} />
       <Masthead />
       <LiveCelebLife />
       <GlobalLocation />
       <Amenities />
       {/* <FloorPlans /> */}
       <Location />
-      <Footer setCommonFormState={setCommonFormState} />
+      <Footer setCommonFormState={setCommonFormState} setDownloadReq={setDownloadReq} />
     </div>
   );
 }
