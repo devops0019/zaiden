@@ -20,7 +20,7 @@ export const CommonGetinTouchForm = ({commonFormState, setCommonFormState, downl
     }
 
     const submitFormData = (formData, downloadReq = false) => {
-        const HOST = "https://zapi.onrender.com" || "https://zapi-vert.vercel.app";
+        const HOST = "https://zapi-vert.vercel.app" || "https://zapi.onrender.com";
         const FORMDATAURL = `${HOST}/createlead`;
 
         axios.post(FORMDATAURL, formData, {
@@ -34,7 +34,7 @@ export const CommonGetinTouchForm = ({commonFormState, setCommonFormState, downl
             }else{
                 console.error("Lead not captured");
             }
-        })
+        });
     }
 
     const name = useRef();
@@ -74,7 +74,7 @@ export const CommonGetinTouchForm = ({commonFormState, setCommonFormState, downl
     return(
         <div className={`form-overlay ${commonFormState ? 'show' : 'hidden'}`}>
             <div className="get-in-touch">
-                <button className="close-button" type="button" onClick={() => setCommonFormState(false)}>
+                <button className="close-button" type="button" onClick={() => {setCommonFormState(false); showSuccessMsg(false)}}>
                     <FontAwesomeIcon icon={faXmark} color="gray" fontSize={27} />
                 </button>
                 {!successMsg ? (<div className="get-in-touch-wrapper">
