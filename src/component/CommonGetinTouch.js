@@ -8,19 +8,6 @@ export const CommonGetinTouchForm = ({commonFormState, setCommonFormState, downl
     let [formValid, setFormValid] = useState(false);
     let [successMsg, showSuccessMsg] = useState(false);
 
-    const getAuthToken = (formData, downloadReq = false) => {
-        const AUTHENDPOINT = "https://zapi.onrender.com/";
-
-        axios
-        .get(AUTHENDPOINT)
-        .then(res => {
-            if(res.status === 200){
-                let data = res.data || {};
-                submitFormData(formData, data, downloadReq);
-            }
-        })
-    }
-
     const downloadBrochure = () => {
         let element = document.createElement('a');
         element.setAttribute('href', '../../ROSWALT ZAIDEN.pdf');
@@ -32,27 +19,20 @@ export const CommonGetinTouchForm = ({commonFormState, setCommonFormState, downl
         document.body.removeChild(element);
     }
 
-    const submitFormData = (formData, resData, downloadReq = false) => {
-        let submitData = {
-            "req": {...formData}
-        }
+    const submitFormData = (formData, downloadReq = false) => {
+        const HOST = "https://zapi-vert.vercel.app";
+        const FORMDATAURL = `${HOST}/createlead`;
 
-        let accessToken = resData.access_token,
-            instanceURL = resData.instance_url;
-
-        const FORMDATAURL = `${instanceURL}/services/apexrest/CreateLead/`;
-
-        axios.post(FORMDATAURL, submitData, {
-            headers: {
-                'Authorization': `Bearer ${accessToken}`,
-                "Content-Type":  "application/json"
-            }
+        axios.post(FORMDATAURL, formData, {
         }).then(res => {
-            if(res.status === 200){
+            let message = res.data.message;
+            if(res.status === 200 && message === "Lead Created Successfully"){
                 showSuccessMsg(true);
                 if(downloadReq){
                     downloadBrochure();
                 }
+            }else{
+                console.error("Lead not captured");
             }
         })
     }
@@ -63,27 +43,32 @@ export const CommonGetinTouchForm = ({commonFormState, setCommonFormState, downl
     const emailError = useRef();
 
     const checkFormData = () => {
-        if(email.current.value !== "" && (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.current.value))){
+        let formData = {
+            "name": name.current.value,
+            "email": email.current.value || "",
+            "mobile": phone.current.value,
+            "campaignCode":"7019D000000Ce79QAD",
+            "url":"https://roswaltzaiden.com",
+            "remarks":"Test Leads from RZ Website",
+            "UTM_Medium":"RZ Website",
+            "UTM_Source":"sub portal",
+            "LeadIdentifier":"RZWebsite",
+        };
+        if(name.current.value === "" || phone.current.value === ""){
+            setFormValid(false);
+        }
+        else if(email.current.value === ""){
+            setFormValid(true);
+            submitFormData(formData, downloadReq);
+        }
+        else if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.current.value)){
             emailError.current.value = "";
             setFormValid(true);
+            submitFormData(formData, downloadReq);
         }else{
             setFormValid(false);
             emailError.current.value = "Please enter valid email";
         }
-
-        let formData = {
-            "name": name.current.value,
-            "email": email.current.value,
-            "mobile": phone.current.value,
-            "campaignCode":"7019D000000Ce79QAD",
-            "url":"https://roswaltzaiden.com",
-            "remarks":"Test Leads Lokesh From Portal25",
-            "UTM_Medium":"RZ Website",
-            "UTM_Source":"sub portal",
-            "LeadIdentifier":"RZWebsite"
-        };
-
-        formValid && getAuthToken(formData, downloadReq);
     }
 
     return(
@@ -111,7 +96,7 @@ export const CommonGetinTouchForm = ({commonFormState, setCommonFormState, downl
                     </form>
                 </div>) : (
                     <div className="get-in-touch-wrapper">
-                        <p className="thankyou-msg">Thank you for your details! We'll get in touch soon with you.</p>
+                        <p className="thankyou-msg">Thank you for your details! We'll soon get in touch with you.</p>
                     </div>
                 )}
             </div>

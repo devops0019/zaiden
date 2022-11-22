@@ -446,6 +446,12 @@ p, h2{
   cursor: pointer;
   z-index: 2;
 }
+.thankyou-msg{
+  color: var(--primaryYellow);
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 300;
+}
 /* Header styles */
 .header{
   position: fixed;
