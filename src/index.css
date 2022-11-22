@@ -452,6 +452,10 @@ p, h2{
   text-align: center;
   font-weight: 300;
 }
+.process-req{
+  color: var(--primaryYellow);
+  font-size: 1rem;
+}
 /* Header styles */
 .header{
   position: fixed;

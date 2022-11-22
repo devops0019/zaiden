@@ -7,6 +7,7 @@ export const CommonGetinTouchForm = ({commonFormState, setCommonFormState, downl
 
     let [formValid, setFormValid] = useState(false);
     let [successMsg, showSuccessMsg] = useState(false);
+    let [inProcess, setInProcess] = useState(false);
 
     const downloadBrochure = () => {
         let element = document.createElement('a');
@@ -20,6 +21,7 @@ export const CommonGetinTouchForm = ({commonFormState, setCommonFormState, downl
     }
 
     const submitFormData = (formData, downloadReq = false) => {
+        setInProcess(true);
         const HOST = "https://zapi-vert.vercel.app" || "https://zapi.onrender.com";
         const FORMDATAURL = `${HOST}/createlead`;
 
@@ -28,6 +30,7 @@ export const CommonGetinTouchForm = ({commonFormState, setCommonFormState, downl
             let message = res.data.message;
             if(res.status === 200 && message === "Lead Created Successfully"){
                 showSuccessMsg(true);
+                setInProcess(false);
                 if(downloadReq){
                     downloadBrochure();
                 }
@@ -74,7 +77,7 @@ export const CommonGetinTouchForm = ({commonFormState, setCommonFormState, downl
     return(
         <div className={`form-overlay ${commonFormState ? 'show' : 'hidden'}`}>
             <div className="get-in-touch">
-                <button className="close-button" type="button" onClick={() => {setCommonFormState(false); showSuccessMsg(false)}}>
+                <button className="close-button" type="button" onClick={() => {setCommonFormState(false); showSuccessMsg(false); setInProcess(false);}}>
                     <FontAwesomeIcon icon={faXmark} color="gray" fontSize={27} />
                 </button>
                 {!successMsg ? (<div className="get-in-touch-wrapper">
@@ -91,8 +94,11 @@ export const CommonGetinTouchForm = ({commonFormState, setCommonFormState, downl
                             <span className="validation-error email" ref={emailError}></span>
                         </fieldset>
                         <fieldset className="form-fieldset btn-fieldset">
-                            <button className="submit-btn" onClick={() => checkFormData()}>Submit</button>
+                            <button className="submit-btn" disabled={inProcess ? 'disabled' : ''} onClick={() => checkFormData()}>Submit</button>
                         </fieldset>
+                        {inProcess && (<fieldset className="form-fieldset">
+                            <p className="process-req">Please wait while we process your request....</p>
+                        </fieldset>)}
                     </form>
                 </div>) : (
                     <div className="get-in-touch-wrapper">
