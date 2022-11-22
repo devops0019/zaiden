@@ -20,7 +20,7 @@ export const CommonGetinTouchForm = ({commonFormState, setCommonFormState, downl
     }
 
     const submitFormData = (formData, downloadReq = false) => {
-        const HOST = "https://zapi-vert.vercel.app";
+        const HOST = "https://zapi.onrender.com" || "https://zapi-vert.vercel.app";
         const FORMDATAURL = `${HOST}/createlead`;
 
         axios.post(FORMDATAURL, formData, {
