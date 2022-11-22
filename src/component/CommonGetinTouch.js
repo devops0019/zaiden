@@ -10,7 +10,7 @@ export const CommonGetinTouchForm = ({commonFormState, setCommonFormState, downl
 
     const downloadBrochure = () => {
         let element = document.createElement('a');
-        element.setAttribute('href', '../../ROSWALT ZAIDEN.pdf');
+        element.setAttribute('href', 'https://github.com/Gauravp15/zaiden/raw/main/ROSWALT%20ZAIDEN.pdf');
         element.setAttribute('download', 'ROSWALT ZAIDEN');
         element.style.display = 'none';
         document.body.appendChild(element);
