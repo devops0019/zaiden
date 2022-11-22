@@ -43,7 +43,9 @@ export const CommonGetinTouchForm = ({commonFormState, setCommonFormState, downl
     const name = useRef();
     const phone = useRef();
     const email = useRef();
+    const nameError = useRef();
     const emailError = useRef();
+    const phoneError = useRef();
 
     const checkFormData = () => {
         let formData = {
@@ -59,6 +61,14 @@ export const CommonGetinTouchForm = ({commonFormState, setCommonFormState, downl
         };
         if(name.current.value === "" || phone.current.value === ""){
             setFormValid(false);
+        }
+        else if(name.current.value.length < 4){
+            setFormValid(false);
+            nameError.current.value = "Please enter atleast 4 characters"
+        }
+        else if(phone.current.value.length < 10){
+            setFormValid(false);
+            nameError.current.value = "Please enter 10 digits"
         }
         else if(email.current.value === ""){
             setFormValid(true);
@@ -85,13 +95,15 @@ export const CommonGetinTouchForm = ({commonFormState, setCommonFormState, downl
                     <form onSubmit={(e) => e.preventDefault()}>
                         <fieldset className="form-fieldset">
                             <input type="text" placeholder="Name*" className="input-text" required ref={name} minLength={4} />
+                            <span className="validation-error" ref={nameError}></span>
                         </fieldset>
                         <fieldset className="form-fieldset">
                             <input type="number" placeholder="Number*" className="input-text" required ref={phone} minLength={10} maxLength={10} />
+                            <span className="validation-error" ref={phoneError}></span>
                         </fieldset>
                         <fieldset className="form-fieldset">
                             <input type="text" placeholder="Email Id" className="input-text" ref={email}  />
-                            <span className="validation-error email" ref={emailError}></span>
+                            <span className="validation-error" ref={emailError}></span>
                         </fieldset>
                         <fieldset className="form-fieldset btn-fieldset">
                             <button className="submit-btn" disabled={inProcess ? 'disabled' : ''} onClick={() => checkFormData()}>Submit</button>
