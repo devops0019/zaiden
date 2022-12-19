@@ -13,6 +13,15 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <meta name="pinterest" content="nopin" />
     <title>Roswalt Zaiden</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11030931413"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-11030931413');
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -43,5 +52,24 @@
       src="https://www.facebook.com/tr?id=1245463919348258&ev=PageView&noscript=1"
       /></noscript>
     <!-- End Meta Pixel Code -->
+    <script>
+      window.addEventListener('load', function() {
+    
+        var x = 0;
+        var timer = setInterval(function() {
+          if (document.querySelectorAll('.thankyou-msg').length > 0 && document.querySelector('.thankyou-msg').innerText.indexOf('Thank') != -1) {
+            if (x == 0) {
+              gtag('event', 'conversion', {
+                'send_to': 'AW-11030931413/uDqbCJ7XqYUYENXP-osp'
+              });
+              x = 1;
+            }
+            clearInterval(timer);
+          }
+        }, 1000);
+    
+      });
+    
+    </script>
   </body>
 </html>
