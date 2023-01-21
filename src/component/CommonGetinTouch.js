@@ -87,9 +87,9 @@ export const CommonGetinTouchForm = ({commonFormState, setCommonFormState, downl
     return(
         <div className={`form-overlay ${commonFormState ? 'show' : 'hidden'}`}>
             <div className="get-in-touch">
-                <button className="close-button" type="button" onClick={() => {setCommonFormState(false); showSuccessMsg(false); setInProcess(false);}}>
+                {!downloadReq && <button className="close-button" type="button" onClick={() => {setCommonFormState(false); showSuccessMsg(false); setInProcess(false);}}>
                     <FontAwesomeIcon icon={faXmark} color="gray" fontSize={27} />
-                </button>
+                </button>}
                 {!successMsg ? (<div className="get-in-touch-wrapper">
                     <h3 className="git-title">Get In touch</h3>
                     <form onSubmit={(e) => e.preventDefault()}>
