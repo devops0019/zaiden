@@ -57,7 +57,8 @@
     <script>
       window.addEventListener('load', function() {
         var timer = setInterval(function() {
-          if (document.querySelector('.thankyou-msg').innerText.includes('Thank you')) {
+          const $thanksEl = document.querySelector('.thankyou-msg')
+          if ($thanksEl && $thanksEl.innerText.includes('Thank you')) {
             gtag('event', 'conversion', {
               'send_to': 'AW-11030931413/uDqbCJ7XqYUYENXP-osp'
             });
