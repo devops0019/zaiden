@@ -13,6 +13,9 @@ export const Location = () => {
         const FORMDATAURL = `${HOST}/createlead`;
 
         axios.post(FORMDATAURL, formData, {
+            headers: {
+                Authorization: "Bearer tYFSaXhtSZF6AdjjqCnvvtoC"
+            }
         }).then(res => {
             let message = res.data.message;
             if(res.status === 200 && message === "Lead Created Successfully"){
