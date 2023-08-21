@@ -12,7 +12,7 @@ export const Footer = ({setCommonFormState, setDownloadReq}) => {
                         <div className="footer-left">
                             <p>Contact: <a href="tel:+917507070707">7507070707</a></p>
                             <p>Email: <a href="mailto:info@roswalt.com">info@roswalt.com</a></p>
-                            <p>Address: A S Hightech, 16, Koteshwar Palace CHSL, Jeeva Mahale Road, Andheri (East), Mumbai - 400069.</p>
+                            <p>Address: A S HIGHTECH LLP., 16, Koteshwar Palace CHSL, Jeeva Mahale Road, Andheri (East), Mumbai - 400069.</p>
                             <p>RERA No: P51800047680</p>
                         </div>
                         <div className="footer-right">
