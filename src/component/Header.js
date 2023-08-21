@@ -49,6 +49,7 @@ export const Header = ({setCommonFormState, setDownloadReq}) => {
                                 <li><a href="https://www.roswalt.com/about.php">About</a></li>
                                 <li><a href="#amenities" onClick={() => setIsActive(false)} className="local-links">Amenities</a></li>
                                 <li><a href="#location" onClick={() => setIsActive(false)} className="local-links">Location</a></li>
+                                <li><a href="/rera.pdf" onClick={() => setIsActive(false)} className="local-links">RERA</a></li>
                             </ul>
                         </div>
                     </nav>
