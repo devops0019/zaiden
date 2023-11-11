@@ -2,12 +2,15 @@ import React, {useRef, useState} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 export const CommonGetinTouchForm = ({commonFormState, setCommonFormState, downloadReq}) => {
 
     let [formValid, setFormValid] = useState(false);
     let [successMsg, showSuccessMsg] = useState(false);
     let [inProcess, setInProcess] = useState(false);
+
+    const navigate = useNavigate();
 
     const downloadBrochure = () => {
         let element = document.createElement('a');
@@ -37,6 +40,7 @@ export const CommonGetinTouchForm = ({commonFormState, setCommonFormState, downl
                 if(downloadReq){
                     downloadBrochure();
                 }
+                navigate('/thank-you');
             }else{
                 console.error("Lead not captured");
             }

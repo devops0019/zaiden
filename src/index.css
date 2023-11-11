@@ -1622,3 +1622,18 @@ p, h2{
     transform: translate(50px, 100px);
   }
 }
+
+.thank-you-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  flex-direction: column;
+  .heading-big{
+    font-size: 7rem;
+    color: var(--primaryYellow) !important;
+  }
+  .heading {
+    color: var(--primaryYellow) !important;
+  }
+}

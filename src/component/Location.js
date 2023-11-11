@@ -1,11 +1,14 @@
 import React, {useRef, useState} from "react";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 export const Location = () => {
 
     let [formValid, setFormValid] = useState(false);
     let [successMsg, showSuccessMsg] = useState(false);
     let [inProcess, setInProcess] = useState(false);
+
+    const navigate = useNavigate();
 
     const submitFormData = (formData) => {
         setInProcess(true);
@@ -21,6 +24,7 @@ export const Location = () => {
             if(res.status === 200 && message === "Lead Created Successfully"){
                 showSuccessMsg(true);
                 setInProcess(false);
+                navigate('/thank-you');
             }else{
                 console.error("Lead not captured");
             }
