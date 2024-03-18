@@ -51,7 +51,7 @@ export const TrackingHeader = ({ setCommonFormState, setDownloadReq }) => {
               <ul className="nav-list">
                 <li>
                   <a
-                    href="/#masthead"
+                    href="/"
                     onClick={() => setIsActive(false)}
                     className="local-links"
                   >
@@ -91,7 +91,7 @@ export const TrackingHeader = ({ setCommonFormState, setDownloadReq }) => {
             </div>
           </nav>
           <div className="header-logo">
-            <a href="#masthead" onClick={() => setIsActive(false)}>
+            <a href="/" onClick={() => setIsActive(false)}>
               <img src="images/headerlogo.png" alt="Roswalt Zaiden" />
             </a>
           </div>
