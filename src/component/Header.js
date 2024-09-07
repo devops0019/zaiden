@@ -45,10 +45,10 @@ export const Header = ({setCommonFormState, setDownloadReq}) => {
                     <nav className="header-nav">
                         <div className={`nav-wrapper ${isActive ? 'is-active' : ''}`}>
                             <ul className="nav-list">
-                                <li><a href="/#masthead" onClick={() => setIsActive(false)} className="local-links">Home</a></li>
+                                <li><a href="#masthead" onClick={() => setIsActive(false)} className="local-links">Home</a></li>
                                 <li><a href="https://www.roswalt.com/about.php">About</a></li>
-                                <li><a href="/#amenities" onClick={() => setIsActive(false)} className="local-links">Amenities</a></li>
-                                <li><a href="/#location" onClick={() => setIsActive(false)} className="local-links">Location</a></li>
+                                <li><a href="#amenities" onClick={() => setIsActive(false)} className="local-links">Amenities</a></li>
+                                <li><a href="#location" onClick={() => setIsActive(false)} className="local-links">Location</a></li>
                                 <li><a href="https://roswaltzaiden.com/rera.pdf" target="_blank">RERA</a></li>
                             </ul>
                         </div>

@@ -532,10 +532,13 @@ p, h2{
   background: transparent;
   border: none;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 .download-brochure button span{
   display: inline-block;
-  margin-right: 10px;
 }
 .download-brochure button img{
   width: 16px;
@@ -1636,4 +1639,51 @@ p, h2{
   .heading {
     color: var(--primaryYellow) !important;
   }
+}
+.WhatsappChatIcon {
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  z-index: 9;
+  & img {
+    --size: 50px;
+    width: var(--size);
+    height: var(--size);
+  }
+}
+.download-brochure button {
+  width: 220px;
+  height: 40px;
+  position: relative;
+  border-radius: 10px;
+  background: black;
+}
+@media screen and (max-width: 700px)
+{
+  .download-brochure button {
+    width: 40px;
+    height: 40px;
+  } 
+}
+.download-brochure button:before {
+    content: '';
+    /* background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000); */
+    background: linear-gradient(45deg, rgba(184,141,60,1) 0%, rgba(232,168,48,1) 23%, rgba(224,188,120,1) 39%, rgba(224,188,120,1) 60%, rgba(0,0,0,1) 100%);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    /* opacity: 0; */
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
 }
