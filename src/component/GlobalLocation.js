@@ -35,7 +35,7 @@ export const GlobalLocation = () => {
     }, [])
 
     return (
-        <section className="global-location full-height">
+        <section className="global-location full-height" id="global-location">
             <div className="main-container">
                 <div className="sparkles left-top-sparkle" data-value="-5"></div>
                 <div className="sparkles right-mid-sparkle" data-value="5"></div>
