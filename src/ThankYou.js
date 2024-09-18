@@ -2,10 +2,14 @@ import React from "react";
 import { TrackingHeader } from "./component/TrackingHeader";
 import { Footer } from "./component/Footer";
 import './index.css';
+import useScript from "./hooks/useScript";
 
 const ThankYou = () => {
+  useScript('https://pxl.iqm.com/i/pixel/0af78a3b-c49d-475a-99b9-1fcfc6339b44')
+
   return (
     <>
+      
       <TrackingHeader />
       <div className="thank-you-container">
       <h1 className="heading-big">Thank You</h1>
