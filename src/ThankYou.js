@@ -5,7 +5,8 @@ import './index.css';
 import useScript from "./hooks/useScript";
 
 const ThankYou = () => {
-  useScript('https://pxl.iqm.com/i/pixel/0af78a3b-c49d-475a-99b9-1fcfc6339b44')
+  useScript('https://pxl.iqm.com/i/pixel/0af78a3b-c49d-475a-99b9-1fcfc6339b44');
+  useScript('https://pxl.iqm.com/i/pixel/940ab7f9-48bb-4157-ac40-138e400d4893');
 
   return (
     <>
