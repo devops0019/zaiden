@@ -50,9 +50,11 @@ export const CommonGetinTouchForm = ({commonFormState, setCommonFormState, downl
     const name = useRef();
     const phone = useRef();
     const email = useRef();
+    const isAgree = useRef();
     const nameError = useRef();
     const emailError = useRef();
     const phoneError = useRef();
+    const isAgreeError = useRef();
 
     const checkFormData = () => {
         let formData = {
@@ -85,6 +87,9 @@ export const CommonGetinTouchForm = ({commonFormState, setCommonFormState, downl
             emailError.current.value = "";
             setFormValid(true);
             submitFormData(formData, downloadReq);
+        }else if( !isAgree.current.checked ){
+            isAgreeError.current.value = "This is required.";
+            setFormValid(false);
         }else{
             setFormValid(false);
             emailError.current.value = "Please enter valid email";
@@ -111,6 +116,14 @@ export const CommonGetinTouchForm = ({commonFormState, setCommonFormState, downl
                         <fieldset className="form-fieldset">
                             <input type="text" placeholder="Email Id" className="input-text" ref={email}  />
                             <span className="validation-error" ref={emailError}></span>
+                        </fieldset>
+                        <fieldset className="form-fieldset">
+                            <label>
+                                <input type="checkbox" ref={isAgree}  />
+                                <span>I authorize Roswalt Realty &mp; its representatives to contact me with updates and notifications via Email/SMS/WhatsApp/Call/RCS. This will override DND/NDNC settings.
+                                Privacy Policy</span>
+                            </label>
+                            <span className="validation-error" ref={isAgreeError}></span>
                         </fieldset>
                         <fieldset className="form-fieldset btn-fieldset">
                             <button className="submit-btn" disabled={inProcess ? 'disabled' : ''} onClick={() => checkFormData()}>Submit</button>
