@@ -1687,3 +1687,9 @@ p, h2{
   50% { background-position: 400% 0; }
   100% { background-position: 0 0; }
 }
+.text-danger {
+  color: red;
+}
+.form-check {
+  margin-bottom: 15px;
+}

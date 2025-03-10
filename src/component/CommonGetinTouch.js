@@ -79,18 +79,16 @@ export const CommonGetinTouchForm = ({commonFormState, setCommonFormState, downl
             setFormValid(false);
             nameError.current.value = "Please enter 10 digits"
         }
-        else if(email.current.value === ""){
-            setFormValid(true);
-            submitFormData(formData, downloadReq);
-        }else if( !isAgree.current.checked ){
-            isAgreeError.current.value = "This is required.";
+        else if( !isAgree.current.checked ){
+            isAgreeError.current.textContent = "This is required.";
             setFormValid(false);
+            return false
         }
-        else if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.current.value)){
+        else if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.current.value) || email.current.value === ""){
             emailError.current.value = "";
             setFormValid(true);
             submitFormData(formData, downloadReq);
-        }else{
+        } else{
             setFormValid(false);
             emailError.current.value = "Please enter valid email";
         }
@@ -118,12 +116,12 @@ export const CommonGetinTouchForm = ({commonFormState, setCommonFormState, downl
                             <span className="validation-error" ref={emailError}></span>
                         </fieldset>
                         <fieldset className="form-fieldset">
-                            <label>
+                            <label className="form-check">
                                 <input type="checkbox" ref={isAgree}  />
                                 <span style={{ color: "white" }}>{' '}I authorize Roswalt Realty & its representatives to contact me with updates and notifications via Email/SMS/WhatsApp/Call/RCS. This will override DND/NDNC settings.
                                 Privacy Policy</span>
                             </label>
-                            <span className="validation-error" ref={isAgreeError}></span>
+                            <p className="validation-error text-danger" ref={isAgreeError}></p>
                         </fieldset>
                         <fieldset className="form-fieldset btn-fieldset">
                             <button className="submit-btn" disabled={inProcess ? 'disabled' : ''} onClick={() => checkFormData()}>Submit</button>
