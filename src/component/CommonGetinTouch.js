@@ -120,7 +120,7 @@ export const CommonGetinTouchForm = ({commonFormState, setCommonFormState, downl
                         <fieldset className="form-fieldset">
                             <label>
                                 <input type="checkbox" ref={isAgree}  />
-                                <span>I authorize Roswalt Realty &mp; its representatives to contact me with updates and notifications via Email/SMS/WhatsApp/Call/RCS. This will override DND/NDNC settings.
+                                <span style={{ color: "white" }}>I authorize Roswalt Realty &mp; its representatives to contact me with updates and notifications via Email/SMS/WhatsApp/Call/RCS. This will override DND/NDNC settings.
                                 Privacy Policy</span>
                             </label>
                             <span className="validation-error" ref={isAgreeError}></span>
