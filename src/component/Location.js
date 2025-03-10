@@ -34,9 +34,12 @@ export const Location = () => {
     const name = useRef();
     const phone = useRef();
     const email = useRef();
+    const isAgree = useRef();
+
     const nameError = useRef();
     const emailError = useRef();
     const phoneError = useRef();
+    const isAgreeError = useRef();
 
     const checkFormData = () => {
         let formData = {
@@ -61,11 +64,12 @@ export const Location = () => {
             setFormValid(false);
             nameError.current.value = "Please enter 10 digits"
         }
-        else if(email.current.value === ""){
-            setFormValid(true);
-            submitFormData(formData);
+        else if(!isAgree.current.checked){
+            setFormValid(false);
+            isAgreeError.current.textContent = "This is required"
+            return false
         }
-        else if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.current.value)){
+        else if(email.current.value === "" || /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.current.value)){
             emailError.current.value = "";
             setFormValid(true);
             submitFormData(formData);
@@ -94,12 +98,21 @@ export const Location = () => {
                             <input type="text" placeholder="Email Id" className="input-text" ref={email}  />
                             <span className="validation-error" ref={emailError}></span>
                         </fieldset>
-                        <fieldset className="form-fieldset btn-fieldset">
-                            <button className="submit-btn" disabled={inProcess ? 'disabled' : ''} onClick={() => checkFormData()}>Submit</button>
+                       
+                        <fieldset className="form-fieldset">
+                            <label className="form-check">
+                                <input type="checkbox" ref={isAgree}  />
+                                <span style={{ color: "white" }}>{' '}I authorize Roswalt Realty & its representatives to contact me with updates and notifications via Email/SMS/WhatsApp/Call/RCS. This will override DND/NDNC settings.
+                                Privacy Policy</span>
+                            </label>
+                            <p className="validation-error text-danger" ref={isAgreeError}></p>
                         </fieldset>
                         {inProcess && (<fieldset className="form-fieldset">
                             <p className="process-req">Please wait while we process your request....</p>
                         </fieldset>)}
+                        <fieldset className="form-fieldset btn-fieldset">
+                            <button className="submit-btn" disabled={inProcess ? 'disabled' : ''} onClick={() => checkFormData()}>Submit</button>
+                        </fieldset>
                     </form>
                 </div>) : (
                     <div className="get-in-touch-wrapper">
