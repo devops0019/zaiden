@@ -82,14 +82,14 @@ export const CommonGetinTouchForm = ({commonFormState, setCommonFormState, downl
         else if(email.current.value === ""){
             setFormValid(true);
             submitFormData(formData, downloadReq);
+        }else if( !isAgree.current.checked ){
+            isAgreeError.current.value = "This is required.";
+            setFormValid(false);
         }
         else if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.current.value)){
             emailError.current.value = "";
             setFormValid(true);
             submitFormData(formData, downloadReq);
-        }else if( !isAgree.current.checked ){
-            isAgreeError.current.value = "This is required.";
-            setFormValid(false);
         }else{
             setFormValid(false);
             emailError.current.value = "Please enter valid email";
