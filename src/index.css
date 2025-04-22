@@ -1642,7 +1642,7 @@ p, h2{
 }
 .WhatsappChatIcon {
   position: fixed;
-  bottom: 40px;
+  bottom: 90px;
   right: 20px;
   z-index: 9;
   & img {
