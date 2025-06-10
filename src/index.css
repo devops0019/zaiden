@@ -843,7 +843,7 @@ p, h2{
   left:10%;
 }
 /* Amenities styles */
-.amenities{
+.amenities, #VirtualTour {
   background: var(--primaryBlack);
   padding: 80px 0px 40px 0px;
   text-align: center;

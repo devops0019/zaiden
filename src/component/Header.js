@@ -48,6 +48,7 @@ export const Header = ({setCommonFormState, setDownloadReq}) => {
                                 <li><a href="#masthead" onClick={() => setIsActive(false)} className="local-links">Home</a></li>
                                 <li><a href="#global-location" onClick={() => setIsActive(false)} className="local-links">About</a></li>
                                 <li><a href="#amenities" onClick={() => setIsActive(false)} className="local-links">Amenities</a></li>
+                                <li><a href="#VirtualTour" onClick={() => setIsActive(false)} className="local-links">Virtual Tour</a></li>
                                 <li><a href="#location" onClick={() => setIsActive(false)} className="local-links">Location</a></li>
                                 <li><a href="https://roswaltzaiden.com/rera.pdf" target="_blank">RERA</a></li>
                             </ul>
