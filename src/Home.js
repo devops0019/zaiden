@@ -34,6 +34,9 @@ function Home() {
       <GlobalLocation />
       <Amenities />
       {/* <FloorPlans /> */}
+      <section style={{ margin: "0 auto", width: "100%", textAlign: "center" }}>
+        <iframe width="853" height="480" src="https://my.matterport.com/show/?m=5e5rBSdEkR6" frameborder="0" allowfullscreen allow="autoplay; fullscreen; web-share; xr-spatial-tracking;"></iframe>
+      </section>
       <Location />
       <Footer
         setCommonFormState={setCommonFormState}
