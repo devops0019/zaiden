@@ -3,6 +3,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
+import ReCAPTCHA from "react-google-recaptcha";
+
+
+const CaptchaField = ({ onSuccess, onErrored, onExpired }) => {
+    const onChange = (value) => {
+        onSuccess();
+    }
+    return (
+        <ReCAPTCHA onChange={onChange} onExpired={onExpired} onErrored={onErrored} sitekey="6Ld7xaIrAAAAAEeubG-FTjXMdPxM0YPb5m957LYH" />
+    )
+}
 
 export const CommonGetinTouchForm = ({commonFormState, setCommonFormState, downloadReq}) => {
 
@@ -55,6 +66,7 @@ export const CommonGetinTouchForm = ({commonFormState, setCommonFormState, downl
     const emailError = useRef();
     const phoneError = useRef();
     const isAgreeError = useRef();
+    const [captchaOk, setCaptchaOk] = useState(false)
 
     const checkFormData = () => {
         let formData = {
@@ -116,6 +128,10 @@ export const CommonGetinTouchForm = ({commonFormState, setCommonFormState, downl
                             <span className="validation-error" ref={emailError}></span>
                         </fieldset>
                         <fieldset className="form-fieldset">
+                            <CaptchaField onSuccess={isSuccess => setCaptchaOk(isSuccess)} onErrored={_ => setCaptchaOk(false)} onExpired={_ => setCaptchaOk(false)} />
+                            <p className="validation-error text-danger" ref={isAgreeError}></p>
+                        </fieldset>
+                        <fieldset className="form-fieldset">
                             <label className="form-check">
                                 <input type="checkbox" ref={isAgree}  />
                                 <span style={{ color: "white" }}>{' '}I authorize Roswalt Realty & its representatives to contact me with updates and notifications via Email/SMS/WhatsApp/Call/RCS. This will override DND/NDNC settings.
@@ -124,7 +140,8 @@ export const CommonGetinTouchForm = ({commonFormState, setCommonFormState, downl
                             <p className="validation-error text-danger" ref={isAgreeError}></p>
                         </fieldset>
                         <fieldset className="form-fieldset btn-fieldset">
-                            <button className="submit-btn" disabled={inProcess ? 'disabled' : ''} onClick={() => checkFormData()}>Submit</button>
+                            <button className="submit-btn" disabled={(inProcess || !(captchaOk)) ? 'disabled' : ''} onClick={() => checkFormData()}>Submit</button>
+                            {captchaOk ? 'Captcha OK': 'Captcha Not OK'}
                         </fieldset>
                         {inProcess && (<fieldset className="form-fieldset">
                             <p className="process-req">Please wait while we process your request....</p>

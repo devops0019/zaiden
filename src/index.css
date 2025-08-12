@@ -424,7 +424,7 @@ p, h2{
   display: none;
 }
 .form-overlay .get-in-touch{
-  height: 70vh;
+  min-height: 70vh;
   width: 520px;
   padding: 0px;
   display: flex;
@@ -433,7 +433,7 @@ p, h2{
   justify-content: center;
   background: var(--primaryBlack);
   position: absolute;
-  top: calc(50% - 35vh);
+  top: calc(50% - 45vh);
   left: calc(50% - 260px);
   z-index: 100;
 }
