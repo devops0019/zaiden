@@ -1520,8 +1520,8 @@ p, h2{
   }
   .form-overlay .get-in-touch{
     max-width: 80%;
-    height: 60vh;
-    top: calc(50% - 30vh);
+    height: auto;
+    top: 100px;
     left: 10%;
   }
   .section-description{
@@ -1692,4 +1692,10 @@ p, h2{
 }
 .form-check {
   margin-bottom: 15px;
+}
+@media screen and (max-width: 600px) {
+  .form-check {
+    font-size: 13px;
+  }
+  
 }
