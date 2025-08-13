@@ -33,11 +33,11 @@ function Home() {
       <LiveCelebLife />
       <GlobalLocation />
       <Amenities />
-      <section id="VirtualTour" style={{ margin: "0 auto", width: "100%", textAlign: "center" }}>
+      {/* <section id="VirtualTour" style={{ margin: "0 auto", width: "100%", textAlign: "center" }}>
         <div className="sparkles left-mid-sparkle"></div>
         <h2 className="section-title" style={{ marginBottom: "1rem" }}>Virtual Tour</h2>
         <iframe width="853" height="480" src="https://my.matterport.com/show/?m=5e5rBSdEkR6" frameborder="0" allowfullscreen allow="autoplay; fullscreen; web-share; xr-spatial-tracking;"></iframe>
-      </section>
+      </section> */}
       <Location />
       
       <Footer

@@ -1,6 +1,7 @@
 import React, {useRef, useState} from "react";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
+import { CaptchaField } from "./CommonGetinTouch";
 
 export const Location = () => {
 
@@ -40,6 +41,7 @@ export const Location = () => {
     const emailError = useRef();
     const phoneError = useRef();
     const isAgreeError = useRef();
+    const [ captchaOk, setCaptchaOk ] = useState(false);
 
     const checkFormData = () => {
         let formData = {
@@ -98,7 +100,10 @@ export const Location = () => {
                             <input type="text" placeholder="Email Id" className="input-text" ref={email}  />
                             <span className="validation-error" ref={emailError}></span>
                         </fieldset>
-                       
+                       <fieldset className="form-fieldset">
+                            <CaptchaField onSuccess={isSuccess => setCaptchaOk(isSuccess)} onErrored={_ => setCaptchaOk(false)} onExpired={_ => setCaptchaOk(false)} />
+                            <p className="validation-error text-danger" ref={isAgreeError}></p>
+                        </fieldset>
                         <fieldset className="form-fieldset">
                             <label className="form-check">
                                 <input type="checkbox" ref={isAgree}  />
@@ -107,11 +112,12 @@ export const Location = () => {
                             </label>
                             <p className="validation-error text-danger" ref={isAgreeError}></p>
                         </fieldset>
+                        
                         {inProcess && (<fieldset className="form-fieldset">
                             <p className="process-req">Please wait while we process your request....</p>
                         </fieldset>)}
                         <fieldset className="form-fieldset btn-fieldset">
-                            <button className="submit-btn" disabled={inProcess ? 'disabled' : ''} onClick={() => checkFormData()}>Submit</button>
+                            <button className="submit-btn" disabled={(inProcess || !captchaOk) ? 'disabled' : ''} onClick={() => checkFormData()}>Submit</button>
                         </fieldset>
                     </form>
                 </div>) : (

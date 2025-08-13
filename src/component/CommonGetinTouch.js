@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import ReCAPTCHA from "react-google-recaptcha";
 
 
-const CaptchaField = ({ onSuccess, onErrored, onExpired }) => {
+export const CaptchaField = ({ onSuccess, onErrored, onExpired }) => {
     const onChange = (value) => {
         onSuccess();
     }
@@ -141,7 +141,6 @@ export const CommonGetinTouchForm = ({commonFormState, setCommonFormState, downl
                         </fieldset>
                         <fieldset className="form-fieldset btn-fieldset">
                             <button className="submit-btn" disabled={(inProcess || !(captchaOk)) ? 'disabled' : ''} onClick={() => checkFormData()}>Submit</button>
-                            {captchaOk ? 'Captcha OK': 'Captcha Not OK'}
                         </fieldset>
                         {inProcess && (<fieldset className="form-fieldset">
                             <p className="process-req">Please wait while we process your request....</p>
