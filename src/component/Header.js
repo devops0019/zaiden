@@ -60,7 +60,7 @@ export const Header = ({setCommonFormState, setDownloadReq}) => {
                         </a>
                     </div>
                     <div className="download-brochure">
-                        <button type="button" onClick={() => {setCommonFormState(true); setDownloadReq(true)}}><span><FontAwesomeIcon icon={faDownload} /></span><span className="mobile-hide">Download brochure</span></button>
+                        <button type="button" onClick={() => {setCommonFormState(true); }}><span><FontAwesomeIcon icon={faDownload} /></span><span className="mobile-hide">Download brochure</span></button>
                     </div>
                 </div>
             </div>
