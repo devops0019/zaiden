@@ -32,7 +32,7 @@ function App() {
 }
 
 const WhatsappChatIcon = () => {
-  const link = `https://wa.me/917507070707?text=Hi,%20I%20am%20interested%20in%20your%20project`
+  const link = `https://wa.me/917507070707?text=Hi, I saw your ad on Google and I’m interested in your project. Can you share more details?`
   return (
     <a target='_blank' href={link} className='WhatsappChatIcon'>
       <img src={'/images/wp.png'}  />
