@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.c6c8eb41.css",
-    "main.js": "/static/js/main.9b74b5de.js",
+    "main.js": "/static/js/main.6e624cce.js",
     "static/js/902.f9d82a5a.chunk.js": "/static/js/902.f9d82a5a.chunk.js",
     "static/media/goldlogo.svg": "/static/media/goldlogo.9a3befd010cc4521f7fa.svg",
     "static/media/location-min.jpg": "/static/media/location-min.3fcdda60411e68c3612a.jpg",
@@ -16,11 +16,11 @@
     "static/media/granjonRegular.woff2": "/static/media/granjonRegular.5ac2919815f459849a0b.woff2",
     "index.html": "/index.html",
     "main.c6c8eb41.css.map": "/static/css/main.c6c8eb41.css.map",
-    "main.9b74b5de.js.map": "/static/js/main.9b74b5de.js.map",
+    "main.6e624cce.js.map": "/static/js/main.6e624cce.js.map",
     "902.f9d82a5a.chunk.js.map": "/static/js/902.f9d82a5a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c6c8eb41.css",
-    "static/js/main.9b74b5de.js"
+    "static/js/main.6e624cce.js"
   ]
 }
