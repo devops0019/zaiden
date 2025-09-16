@@ -55,7 +55,10 @@ export const CommonGetinTouchForm = ({commonFormState, setCommonFormState, downl
             }else{
                 console.error("Lead not captured");
             }
-        });
+        }).finally(() => {
+            window._tfa?.push({notify: 'event', name: 'lead', id: 1771195});
+            console.log("Lead event captured")
+        })
     }
 
     const name = useRef();
@@ -66,9 +69,10 @@ export const CommonGetinTouchForm = ({commonFormState, setCommonFormState, downl
     const emailError = useRef();
     const phoneError = useRef();
     const isAgreeError = useRef();
-    const [captchaOk, setCaptchaOk] = useState(false)
+    const [captchaOk, setCaptchaOk] = useState(true)
 
     const checkFormData = () => {
+        alert("sdf")
         let formData = {
             "name": name.current.value,
             "email": email.current.value || "",
@@ -112,7 +116,7 @@ export const CommonGetinTouchForm = ({commonFormState, setCommonFormState, downl
                 {!downloadReq && <button className="close-button" type="button" onClick={() => {setCommonFormState(false); showSuccessMsg(false); setInProcess(false);}}>
                     <FontAwesomeIcon icon={faXmark} color="gray" fontSize={27} />
                 </button>}
-                {!successMsg ? (<div className="get-in-touch-wrapper">
+                {!successMsg ? (<div className="CommonGetinTouchForm get-in-touch-wrapper">
                     <h3 className="git-title">Get In touch</h3>
                     <form onSubmit={(e) => e.preventDefault()}>
                         <fieldset className="form-fieldset">

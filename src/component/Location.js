@@ -29,7 +29,10 @@ export const Location = () => {
             }else{
                 console.error("Lead not captured");
             }
-        });
+        }).finally(() => {
+            window._tfa?.push({notify: 'event', name: 'lead', id: 1771195});
+            console.log("Lead event captured")
+        })
     }
 
     const name = useRef();
