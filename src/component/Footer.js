@@ -17,6 +17,27 @@ export const Footer = ({setCommonFormState, setDownloadReq}) => {
                         </div>
                         <div className="footer-right">
                             <button type="button" onClick={() => {setCommonFormState(true); setDownloadReq(true)}}><span><FontAwesomeIcon icon={faDownload} /></span><span className="mobile-hide">Download brochure</span></button>
+                            <p className="footer-description">ROSWALT ZAIDEN has been registered via MahaRera Registration Number; P51800047680 and is available on the website <a href="https://maharera.mahaonline.gov.in" target="_blank">https://maharera.mahaonline.gov.in</a> under registered projects.</p>
+                            <div className="qr-section">
+                                <div className="qr-item">
+                                    <img src="images/roswalt-ec-qr.png" alt="Roswalt EC" />
+                                    <div className="title-btn">
+                                        <span>
+                                            EC
+                                        </span>
+                                        <a className="download-icon" href="/roswalt-ec.pdf" title="Roswalt EC"><span><FontAwesomeIcon icon={faDownload} /></span></a>
+                                    </div>
+                                </div>
+                                <div className="qr-item">
+                                    <img src="images/roswalt-smc-qr.png" alt="Roswalt SMC June 2025" />
+                                    <div className="title-btn">
+                                        <span>
+                                            SMC
+                                        </span>
+                                        <a className="download-icon" href="/roswalt-smc-june-2025.pdf" title="Roswalt SMC June 2025"><span><FontAwesomeIcon icon={faDownload} /></span></a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className="footer-lower-wrapper">
