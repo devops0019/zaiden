@@ -72,7 +72,6 @@ export const CommonGetinTouchForm = ({commonFormState, setCommonFormState, downl
     const [captchaOk, setCaptchaOk] = useState(true)
 
     const checkFormData = () => {
-        alert("sdf")
         let formData = {
             "name": name.current.value,
             "email": email.current.value || "",
@@ -131,10 +130,10 @@ export const CommonGetinTouchForm = ({commonFormState, setCommonFormState, downl
                             <input type="text" placeholder="Email Id" className="input-text" ref={email}  />
                             <span className="validation-error" ref={emailError}></span>
                         </fieldset>
-                        <fieldset className="form-fieldset">
+                        {/* <fieldset className="form-fieldset">
                             <CaptchaField onSuccess={isSuccess => setCaptchaOk(isSuccess)} onErrored={_ => setCaptchaOk(false)} onExpired={_ => setCaptchaOk(false)} />
                             <p className="validation-error text-danger" ref={isAgreeError}></p>
-                        </fieldset>
+                        </fieldset> */}
                         <fieldset className="form-fieldset">
                             <label className="form-check">
                                 <input type="checkbox" ref={isAgree}  />
@@ -144,7 +143,7 @@ export const CommonGetinTouchForm = ({commonFormState, setCommonFormState, downl
                             <p className="validation-error text-danger" ref={isAgreeError}></p>
                         </fieldset>
                         <fieldset className="form-fieldset btn-fieldset">
-                            <button className="submit-btn" disabled={(inProcess || !(captchaOk)) ? 'disabled' : ''} onClick={() => checkFormData()}>Submit</button>
+                            <button className="submit-btn" disabled={(inProcess) ? 'disabled' : ''} onClick={() => checkFormData()}>Submit</button>
                         </fieldset>
                         {inProcess && (<fieldset className="form-fieldset">
                             <p className="process-req">Please wait while we process your request....</p>
